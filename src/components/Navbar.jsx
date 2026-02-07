@@ -3,7 +3,7 @@ import dmwebsoftLogo from '../assets/images/dmwebsoft-logo.png'
 export default function Navbar() {
     return (
         <>
-            <div className={styles.container}>
+            <nav className={styles.container}>
                 <div className={styles.subContainer}>
                     <div className={styles.logo}>
                         <img src={dmwebsoftLogo} alt="dmwebsoft-logo" className={styles.imgLogo} />
@@ -20,7 +20,7 @@ export default function Navbar() {
                         <button className={styles.navbarButton}>Free Quote</button>
                     </div>
                 </div>
-            </div>
+            </nav>
         </>
     )
 }

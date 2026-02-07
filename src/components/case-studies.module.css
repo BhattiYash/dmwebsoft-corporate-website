@@ -1,0 +1,76 @@
+.section {
+  width: 100%;
+}
+
+.container {
+  display: ;
+  width: 80%;
+}
+
+.header p {
+  
+}
+
+/* THE GRID LOGIC */
+.grid {
+
+}
+
+/* BASE CARD STYLING */
+.card {
+ 
+}
+
+.tag {
+
+}
+
+/* INDIVIDUAL SPANNING LOGIC */
+.aiCard {
+}
+
+.ecommerceCard {
+}
+
+.travelCard {
+}
+
+.productivityCard {
+}
+
+.fintechCard {
+}
+
+.fintechCard img {
+}
+
+.productivityCard img {
+}
+
+/* IMAGE ALIGNMENT */
+.card img {
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aiCard,
+  .ecommerceCard,
+  .travelCard,
+  .productivityCard,
+  .fintechCard {
+    grid-column: span 1;
+    /* Everything becomes half-width */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    /* Stack everything */
+  }
+}
+
