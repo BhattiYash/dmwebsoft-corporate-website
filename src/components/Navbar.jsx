@@ -1,5 +1,5 @@
 import styles from './navbar.module.css'
-import dmwebsoftLogo from '../assets/dmwebsoft-logo.png'
+import dmwebsoftLogo from '../assets/images/dmwebsoft-logo.png'
 export default function Navbar() {
     return (
         <>

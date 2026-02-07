@@ -1,7 +1,7 @@
 import styles from './hero.module.css'
-import heroSectionColoredLine from '../assets/hero-section-colored-line.png'
-import top_rated_agency_upwork from '../assets/top_rated_agency_upwork.svg'
-import heroSectionArrow from '../assets/hero-section-arrow.png'
+import heroSectionColoredLine from '../assets/images/hero-section-colored-line.png'
+import top_rated_agency_upwork from '../assets/images/top_rated_agency_upwork.svg'
+import heroSectionArrow from '../assets/images/hero-section-arrow.png'
 export default function Hero() {
   return (
     <div className={styles.container}>
@@ -15,7 +15,7 @@ export default function Hero() {
             <button>LEARN MORE</button>
           </div>
         </div>
-        <div className={styles.extraElement}>
+        <div className={`${styles.extraElement}`}>
           <img src={heroSectionArrow} alt="arrow" />
           <p className={styles.supportText}>Visit to see our work in action</p>
         </div>
