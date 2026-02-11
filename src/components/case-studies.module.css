@@ -1,54 +1,111 @@
 .section {
-  width: 100%;
+  padding: 60px 20px;
+  background-color: #fff;
 }
 
 .container {
-  display: ;
-  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header p {
-  
+  /* font-size: 1.2rem; */
+  margin-bottom: 40px;
+  color: #333;
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #333;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #333;
 }
 
 /* THE GRID LOGIC */
 .grid {
-
+  display: grid;
+  /* 4 equal columns */
+  grid-template-columns: repeat(5, 1fr);
+  /* Adjust row height as needed */
+  height: fit-content;
+  grid-auto-rows: minmax(300px, auto);
+  gap: 20px;
 }
 
 /* BASE CARD STYLING */
 .card {
- 
+  position: relative;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  /* padding: 24px; */
+  height: 324px;
+  overflow: hidden;
+  /* Keeps images from leaking out */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .tag {
-
+  display: inline-block;
+  padding: 4px 12px;
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  border: 1px solid #00a8e8;
+  color: #00a8e8;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  width: fit-content;
+  font-size: larger;
+  font-weight: 500;
+  background-color: #ffffff;
+  /* margin-bottom: 20px; */
 }
 
 /* INDIVIDUAL SPANNING LOGIC */
 .aiCard {
+  grid-column: span 3;
+  background: linear-gradient(135deg, #f0faff 0%, #ffffff 100%);
 }
 
 .ecommerceCard {
+  grid-column: span 2;
+  background: #f5f3ff;
+  /* Slight purple tint like the image */
 }
 
 .travelCard {
+  grid-column: span 1;
 }
 
 .productivityCard {
+  grid-column: span 3;
 }
 
 .fintechCard {
-}
-
-.fintechCard img {
-}
-
-.productivityCard img {
+  grid-column: span 1;
 }
 
 /* IMAGE ALIGNMENT */
 .card img {
+  width: 100%;
+  height: inherit;
+  margin-top: auto;
+  /* Pushes image to bottom of card */
+  object-fit: fill;
+  /* scale: 1.2; */
+  transition: all 0.3s ease-in-out;
+}
+.card:hover img {
+  scale: 1.1;
+
 }
 
 /* RESPONSIVENESS */
@@ -73,4 +130,3 @@
     /* Stack everything */
   }
 }
-
