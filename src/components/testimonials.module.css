@@ -1,0 +1,257 @@
+.testimonials-section {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials-heading {
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 80px;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.highlight-blue {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+.testimonials-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.testimonials-scroll-container {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  flex: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.testimonials-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.author-position {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.scroll-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.scroll-button:hover:not(.disabled) {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.scroll-button:active:not(.disabled) {
+  transform: scale(0.95);
+}
+
+.scroll-button.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.scroll-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-left {
+  margin-right: 0;
+}
+
+.scroll-right {
+  margin-left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .testimonials-heading {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+
+  .testimonial-card {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 36px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 0;
+  }
+
+  .testimonials-container {
+    padding: 0 16px;
+  }
+
+  .testimonials-heading {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-wrapper {
+    gap: 12px;
+  }
+
+  .testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 30px 24px;
+    min-height: 280px;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .author-name {
+    font-size: 15px;
+  }
+
+  .author-position {
+    font-size: 13px;
+  }
+
+  .scroll-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-heading {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .testimonials-wrapper {
+    gap: 8px;
+  }
+
+  .testimonial-card {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 24px 20px;
+  }
+
+  .scroll-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scroll-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
