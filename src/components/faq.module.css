@@ -1,0 +1,85 @@
+/* FAQ.css */
+.faq-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.faq-heading {
+  text-align: center;
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 60px;
+}
+
+.faq-heading span {
+  color: #00a8ff; /* The specific blue from your image */
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  width: 100%;
+}
+
+.faq-question-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #00a8ff;
+  margin: 0;
+}
+
+/* Dropdown Arrow Styling */
+.dropdown-arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #00a8ff;
+  border-bottom: 2px solid #00a8ff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-right: 5px;
+}
+
+.dropdown-arrow.up {
+  transform: rotate(-135deg);
+  margin-top: 5px;
+}
+
+/* Answer Animation Logic */
+.faq-answer-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-answer-container.open {
+  max-height: 200px; /* Large enough for the text */
+  padding-bottom: 20px;
+}
+
+.faq-answer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  max-width: 90%;
+}
+
+.faq-divider {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+}
