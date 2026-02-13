@@ -6,11 +6,15 @@ import Statistics from './components/Statistics'
 import CaseStudies from './components/CaseStudies'
 import AwardAchivements from './components/AwardAchivements'
 import AiPowered from './components/AiPowered'
-// import ContactSection from './components/ContactSection'
-import AddedNew from './components/AddedNew'
+import ContactSection from './components/ContactSection'
 import Industries from './components/Industries'
 import Testimonials from './components/Testimonials'
 import CtaBanner from './components/CtaBanner'
+import FAQ from './components/FAQ'
+import OfficeGallery from './components/OfficeGallary'
+import BlogCarousel from './components/BlogCarousel'
+import ContactBanner from './components/ContactBanner'
+import MainFooter from './components/MainFooter'
 function App() {
   return (
     <>
@@ -22,11 +26,15 @@ function App() {
       <CaseStudies />
       <AwardAchivements />
       <AiPowered />
-      {/* <ContactSection/> */}
-      <AddedNew/>
+      <ContactSection/>
       <Industries/>
       <Testimonials/>
       <CtaBanner/>
+      <FAQ/>
+      <OfficeGallery/>
+      <BlogCarousel/>
+      <ContactBanner/>
+      <MainFooter/>
     </>
   )
 }
