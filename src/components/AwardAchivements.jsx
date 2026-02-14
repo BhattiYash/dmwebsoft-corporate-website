@@ -1,5 +1,5 @@
 import styles from "./award-achivements.module.css";
-import achivements from "../assets/images/achivements.svg"
+import achivements from "../assets/images/awards_win_cup.svg"
 import clutch from "../assets/images/clutch.svg"
 import top_rated_agency_upwork from "../assets/images/top_rated_agency_upwork.svg"
 import trustpilot from "../assets/images/trustpilot.png"
@@ -24,16 +24,16 @@ export default function AwardAchivements() {
 
           <div className={styles.right}>
             <div className={styles.card}><img src={clutch} alt="Clutch" />
-            <img className={styles.five_star} src={five_star} alt="Five Star" />
+              <img className={styles.five_star} src={five_star} alt="Five Star" />
             </div>
             <div className={styles.card}><img src={top_rated_agency_upwork} alt="Upwork" />
-            <img className={styles.five_star} src={five_star} alt="Five Star" />
+              <img className={styles.five_star} src={five_star} alt="Five Star" />
             </div>
             <div className={styles.card}><img src={trustpilot} alt="Trustpilot" />
-            <img className={styles.five_star} src={five_star} alt="Five Star" />
+              <img className={styles.five_star} src={five_star} alt="Five Star" />
             </div>
             <div className={styles.card}><img src={googole} alt="Google" />
-            <img className={styles.five_star} src={five_star} alt="Five Star" />
+              <img className={styles.five_star} src={five_star} alt="Five Star" />
             </div>
           </div>
         </div>
