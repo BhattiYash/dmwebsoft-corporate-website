@@ -1,96 +1,112 @@
-body{
+body {
     font-family: "General Sans", sans-serif;
     /* font-weight: 400; */
 }
+
 .image {
     background: url(../assets/images/hero-section-backgroud-line.png) no-repeat 20% 80px / cover;
     width: 100%;
     height: 100%;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    /* left: 370px; */
-    top: 90px;
+    top: 80px;
     width: 100%;
-    padding-bottom: 200px;
+    height: 800px;
 }
-.contentHero{
+
+.contentHero {
     position: relative;
     right: 120px;
-    top: 42px;
+    top: 5px;
 }
+
 h1 {
     color: #001C3F;
     font-size: 70px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0;
 }
+
 .elementLine {
     width: 505px;
     height: 86px;
 }
-.buttonContainer{
-  margin-top: 50px;
+
+.buttonContainer {
+    margin-top: 50px;
 }
+
 button {
     font-size: 20px;
     letter-spacing: 1px;
     border: 1px solid #009CFB;
     border-radius: 32px;
-    margin-right: 25px;
     padding: 16px 31px;
 }
-button:nth-child(2){
+
+button:nth-child(2) {
     background-color: #009CFB;
     color: #ffffff;
     font-weight: 500;
 
 }
-.button{
+
+.button {
     background-color: #001C3F;
     color: #ffffff;
     font-weight: 500;
+    letter-spacing: 2px;
+    margin-right: 25px;
 }
+
 .ratedPlus {
     color: #009CFB;
 }
+
 .supportText {
-	font-family: 'Fasthand', cursive;
-	color: #001C3F;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 25px;
-	margin: 0;
-	position: relative;
-	bottom: 30px;
-	left: 60px;
+    font-family: 'Fasthand', cursive;
+    color: #001C3F;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    position: relative;
+    bottom: 20px;
+    left: 65px;
 }
+
 .spanText {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 26px;
 }
+
 .text {
     display: flex;
     flex-direction: column;
-    font-weight: 300;
+    font-weight: 400;
 }
+
 .text img {
     height: 1.2em;
     width: auto;
     display: block;
 }
-.extraElement{
+
+.extraElement {
     display: flex;
     flex-direction: column;
     /* height: 50px; */
     margin-left: 430px;
 }
-.extraElement img{
+
+.extraElement img {
     width: 100px;
-    height: 100px;
+    height: 87px;
 }
