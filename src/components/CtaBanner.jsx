@@ -1,14 +1,9 @@
 import styles from './ctabanner.module.css';
+// import wave from '';
 
 const CtaBanner = () => {
   return (
     <section className={styles.bannerContainer}>
-      {/* Background Waves */}
-      <div className={styles.waveWrapper}>
-        <div className={styles.wave1}></div>
-        <div className={styles.wave2}></div>
-        <div className={styles.wave3}></div>
-      </div>
 
       {/* Content */}
       <div className={styles.content}>
