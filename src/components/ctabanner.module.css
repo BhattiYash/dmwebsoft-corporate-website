@@ -2,12 +2,16 @@
   position: relative;
   width: 100%;
   height: 350px;
-  background-color: #001a33; /* Dark Navy Background */
+  background-image: url("../assets/images/bg-banner.svg");
+  background-color: #001a33;
+  background-repeat: no-repeat; 
+  background-size: cover;  
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Clips the waves */
-  font-family: 'Inter', sans-serif; /* Standard modern font */
+  overflow: hidden; 
+  font-family: 'Inter', sans-serif; 
 }
 
 .content {
@@ -39,42 +43,4 @@
 .ctaButton:hover {
   background-color: #008be6;
   transform: translateY(-2px);
-}
-
-/* Background Waves Logic */
-.waveWrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.wave1, .wave2, .wave3 {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 40%;
-  top: 50%;
-  left: -50%;
-}
-
-/* Specific Wave Colors and Opacity */
-.wave1 {
-  border-color: #005bb5; /* Blue wave */
-  transform: rotate(0deg);
-  opacity: 0.5;
-}
-
-.wave2 {
-  border-color: #ffffff; /* Grey/White wave */
-  transform: rotate(15deg);
-  opacity: 0.3;
-}
-
-.wave3 {
-  border-color: #003d7a; /* Darker blue wave */
-  transform: rotate(-10deg);
-  opacity: 0.4;
 }

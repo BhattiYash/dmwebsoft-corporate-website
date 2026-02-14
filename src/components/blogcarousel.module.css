@@ -1,6 +1,6 @@
 .blog-section {
   width: 100%;
-  max-width: 1200px; /* Limits total width to fit 3 cards comfortably */
+  max-width: 1200px;
   margin: 80px auto;
   padding: 0 20px;
   overflow: hidden;
@@ -17,11 +17,11 @@
   color: #00a8ff;
 }
 
-/* The "Window" */
 .carousel-viewport {
   width: 100%;
-  overflow: hidden; /* Hides cards 4 through 11 */
+  overflow: hidden;
   cursor: grab;
+  position: relative;
 }
 
 .carousel-viewport:active {
@@ -30,72 +30,72 @@
 
 .carousel-track {
   display: flex;
-  gap: 30px; /* Space between cards */
-  width: max-content;
+  gap: 25px;
+  width: 100%;
 }
 
 .blog-card {
-  /* Calculation: (100% / 3) minus the gap compensation */
-  flex: 0 0 calc((1200px / 3) - 40px); 
+  flex: 0 0 370px;
   background: #fff;
-  border-radius: 30px;
+  border-radius: 20px;
   border: 1px solid #f0f0f0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
-.blog-image-placeholder {
+.img-box img {
   width: 100%;
   height: 200px;
-  background-color: #f8fbff;
-  border-radius: 30px 30px 0 0;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 
 .blog-content {
-  padding: 30px;
+  padding: 25px;
 }
 
 .blog-date {
   color: #888;
   font-size: 0.9rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .blog-header-text {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: #333;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  min-height: 80px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  min-height: 65px;
 }
 
 .read-more-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   color: #00a8ff;
   font-weight: 600;
 }
 
-/* The half-circle border effect from the design */
 .arrow-circle {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 55px;
   border: 2px solid #00a8ff;
-  border-left-color: transparent; /* Makes it a partial circle */
+  border-left-color: transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease;
-}
-
-.blog-card:hover .arrow-circle {
-  transform: rotate(360deg);
+  transition: transform 0.3s ease;
 }
 
 .arrow-svg {
-  font-size: 1.2rem;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-circle:hover .arrow-svg {
+  transform: translateX(5px);
+  margin-left: 5px;
 }

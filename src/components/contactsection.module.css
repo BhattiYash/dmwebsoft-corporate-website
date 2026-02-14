@@ -13,7 +13,6 @@
     display: flex;
     background-color: #001C3F;
     width: 100%;
-    /* height: %; */
     gap: 80px;
     align-items: center;
     justify-content: center;
@@ -23,13 +22,13 @@
 
 .leftSection {
     flex: 1;
-    max-width: 500px;
+    max-width: 512px;
     color: white;
     margin: 50px;
 }
 
 .heading {
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 20px;
     margin-top: revert;
@@ -93,19 +92,22 @@
 .icon:hover {
     transform: scale(1.1);
 }
-.bottomClipArt{
+
+.bottomClipArt {
     position: relative;
     left: 20px;
     bottom: 0;
     width: 20%;
     height: auto;
 }
-.svg{
+
+.svg {
     position: relative;
     left: 70px;
     bottom: 20px;
     height: auto;
 }
+
 .availabilityText {
     position: relative;
     left: 140px;

@@ -1,29 +1,32 @@
 .section {
-  padding: 60px 20px;
+  padding: 130px 20px;
   background-color: #fff;
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  width: 60%;
   margin: 0 auto;
 }
 
 .header p {
   /* font-size: 1.2rem; */
   margin-bottom: 40px;
-  color: #333;
+  color: #001C3F;
 }
 
 h2 {
   font-size: 3.6rem;
   font-weight: 600;
-  color: #333;
+  color: #001C3F;
 }
 
 p {
   font-size: 1.3rem;
+  font-weight: 400;
   margin-bottom: 40px;
-  color: #333;
+  color: #001C3F;
 }
 
 /* THE GRID LOGIC */
@@ -41,10 +44,10 @@ p {
 .card {
   position: relative;
   background: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid #ABCAF1;
+  border-radius: 10px;
   /* padding: 24px; */
-  height: 324px;
+  height: 314px;
   overflow: hidden;
   /* Keeps images from leaking out */
   display: flex;
@@ -54,19 +57,19 @@ p {
 
 .tag {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 5px 12px;
   position: absolute;
   top: 20px;
   left: 22px;
-  border: 1px solid #00a8e8;
+  border: 1px solid #ABCAF1;
   color: #00a8e8;
   border-radius: 10px;
   font-size: 0.85rem;
   width: fit-content;
-  font-size: larger;
+  font-size: 1rem;
   font-weight: 500;
   background-color: #ffffff;
-  /* margin-bottom: 20px; */
+  transition: all 0.3s ease-in-out;
 }
 
 /* INDIVIDUAL SPANNING LOGIC */
@@ -103,8 +106,15 @@ p {
   /* scale: 1.2; */
   transition: all 0.3s ease-in-out;
 }
+
 .card:hover img {
   scale: 1.1;
+}
+
+.card:hover .tag {
+  color: white;
+  background-color: #00a8e8;
+  transition: all 0.3s ease-in-out;
 
 }
 
