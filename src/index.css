@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'General Sans';
+    src: url('./assets/fonts/GeneralSans-Variable.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    font-family: 'General Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'General Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+    background-color: #fff;
+}
