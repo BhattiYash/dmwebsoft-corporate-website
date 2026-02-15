@@ -5,15 +5,16 @@
 }
 
 .container {
-  /* max-width: 1200px; */
+  max-width: 1200px;
   width: 60%;
   margin: 0 auto;
 }
 
 .header p {
-  /* font-size: 1.2rem; */
-  margin-bottom: 40px;
+  font-size: 1.3rem;
+  margin-bottom: 60px;
   color: #001C3F;
+  margin-top: 10px;
 }
 
 h2 {
@@ -29,24 +30,19 @@ p {
   color: #001C3F;
 }
 
-/* THE GRID LOGIC */
 .grid {
   display: grid;
-  /* 4 equal columns */
   grid-template-columns: repeat(5, 1fr);
-  /* Adjust row height as needed */
   height: fit-content;
   grid-auto-rows: minmax(300px, auto);
   gap: 20px;
 }
 
-/* BASE CARD STYLING */
 .card {
   position: relative;
   background: #f9f9f9;
   border: 1px solid #ABCAF1;
   border-radius: 10px;
-  /* padding: 24px; */
   height: 314px;
   overflow: hidden;
   /* Keeps images from leaking out */
@@ -72,7 +68,6 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-/* INDIVIDUAL SPANNING LOGIC */
 .aiCard {
   grid-column: span 3;
   background: linear-gradient(135deg, #f0faff 0%, #ffffff 100%);
@@ -81,7 +76,6 @@ p {
 .ecommerceCard {
   grid-column: span 2;
   background: #f5f3ff;
-  /* Slight purple tint like the image */
 }
 
 .travelCard {
@@ -96,14 +90,11 @@ p {
   grid-column: span 1;
 }
 
-/* IMAGE ALIGNMENT */
 .card img {
   width: 100%;
   height: inherit;
   margin-top: auto;
-  /* Pushes image to bottom of card */
   object-fit: fill;
-  /* scale: 1.2; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -118,7 +109,6 @@ p {
 
 }
 
-/* RESPONSIVENESS */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
