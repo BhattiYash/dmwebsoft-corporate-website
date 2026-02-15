@@ -1,4 +1,5 @@
 import styles from "./contactsection.module.css"
+import aboutUsLeft from "../assets/images/about-us-left.svg"
 const ContactSection = () => {
   return (
     <section className={styles.section}>
@@ -13,15 +14,15 @@ const ContactSection = () => {
           <h3 className={styles.processTitle}>What's the Process ?</h3>
           <div className={styles.processList}>
             <div className={styles.processItem}>
-              <span className={styles.chevron}>❯</span>
+              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
               Request a Call
             </div>
             <div className={styles.processItem}>
-              <span className={styles.chevron}>❯</span>
+              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
               Consultation Meeting
             </div>
             <div className={styles.processItem}>
-              <span className={styles.chevron}>❯</span>
+              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
               Crafting a Tailored Proposal
             </div>
           </div>
