@@ -9,10 +9,13 @@ export default function Hero() {
         <h1>Web Development Company</h1>
         <img src={heroSectionColoredLine} alt="hero-image" className={styles.elementLine} />
         <div className={styles.text}>
-          <span className={styles.spanText}>TOP <span className={styles.ratedPlus}>RATED PLUS</span>AGENCY ON<img src={top_rated_agency_upwork} alt="" className={styles.topRatedAgencyUpwork} /></span>
+          <span className={styles.spanText}>TOP <span className={styles.ratedPlus}>RATED PLUS</span>AGENCY ON
+            <div className="forImage">
+              <img src={top_rated_agency_upwork} alt="UpworkLogo" className={styles.topRatedAgencyUpwork} /></div></span>
+
           <div className={styles.buttonContainer}>
             <button className={styles.button}>SEE PORTFOLIO</button>
-            <button>LEARN MORE</button>
+            <button className={styles.button}>LEARN MORE</button>
           </div>
         </div>
         <div className={`${styles.extraElement}`}>

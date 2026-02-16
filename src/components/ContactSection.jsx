@@ -1,5 +1,7 @@
 import styles from "./contactsection.module.css"
 import aboutUsLeft from "../assets/images/about-us-left.svg"
+import Flag from "../assets/images/Flag_of_the_United_States.png"
+import dropDownArrow from "../assets/images/drop-down-image.png"
 const ContactSection = () => {
   return (
     <section className={styles.section}>
@@ -85,8 +87,9 @@ const ContactSection = () => {
 
             <div className={styles.formGroup}>
               <div className={styles.phoneContainer}>
-                <span className={styles.flag}>🇺🇸</span>
+                <span className={styles.flag}><img src={Flag} alt="Country Flags" /></span>
                 <span className={styles.countryCode}>+1</span>
+                <img src={dropDownArrow} alt="Drop-down-arrow" className={styles.dropDownArrow} />
                 <input type="tel" name="mobileNumber" placeholder="Mobile Number" className={styles.phoneInput} required />
               </div>
             </div>
