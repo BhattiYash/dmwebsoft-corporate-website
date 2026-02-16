@@ -1,27 +1,22 @@
 .contactBanner {
-  /* background-color: #001a3d;
-  background-image: linear-gradient(rgba(0, 26, 61, 0.8), rgba(0, 26, 61, 0.8)), url('your-wave-pattern.svg'); */
   background: #001C3F url(https://dmwebsoft.com/wp-content/uploads/2023/09/abouts-us-linear.svg) no-repeat 100% 35% / contain;
-  /* background-size: cover; */
   background-position: center;
   padding: 80px 20px 140px;
-  /* Large bottom padding for the footer overlap */
   color: #ffffff;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  /* z-index: 0; */
 }
 
 .bannerHeading {
-  font-size: 1.6rem;
-  font-weight: 300;
-  max-width: 700px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  max-width: 900px;
   margin: 0 auto 35px;
   line-height: 1.4;
 }
 
 .connectButton {
-  background-color: #00a8ff;
+  background-color: #009CFB;
+  ;
   color: white;
   border: none;
   padding: 14px 35px;
@@ -68,11 +63,13 @@
 
 .pillLabel {
   display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .pillValue {
-  font-size: 0.9rem;
-  color: #bdc3c7;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #97bae7;
+
 }

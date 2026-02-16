@@ -16,13 +16,13 @@ body {
     position: relative;
     top: 80px;
     width: 100%;
-    height: 800px;
+    height: 790px;
 }
 
 .contentHero {
     position: relative;
-    right: 120px;
-    top: 5px;
+    right: 110px;
+    top: 0;
 }
 
 h1 {
@@ -33,26 +33,16 @@ h1 {
 }
 
 .elementLine {
-    width: 505px;
-    height: 86px;
+    width: 500px;
+    height: 80px;
 }
 
 .buttonContainer {
     margin-top: 50px;
 }
 
-button {
-    font-size: 20px;
-    letter-spacing: 1px;
-    border: 1px solid #009CFB;
-    border-radius: 32px;
-    padding: 16px 31px;
-}
-
 button:nth-child(2) {
     background-color: #009CFB;
-    color: #ffffff;
-    font-weight: 500;
 
 }
 
@@ -60,8 +50,11 @@ button:nth-child(2) {
     background-color: #001C3F;
     color: #ffffff;
     font-weight: 500;
+    font-size: 1.3rem;
     letter-spacing: 2px;
     margin-right: 25px;
+    border-radius: 32px;
+    padding: 15px 30px;
 }
 
 .ratedPlus {
@@ -83,8 +76,9 @@ button:nth-child(2) {
 .spanText {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 26px;
+    gap: 5px;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
 }
 
 .text {
@@ -94,9 +88,10 @@ button:nth-child(2) {
 }
 
 .text img {
-    height: 1.2em;
+    height: 2.3rem;
     width: auto;
-    display: block;
+    display: inline-flex;
+    justify-content: flex-start;
 }
 
 .extraElement {

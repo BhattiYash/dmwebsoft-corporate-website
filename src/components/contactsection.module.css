@@ -137,9 +137,9 @@
 input[type="text"],
 input[type="email"] {
     width: 100%;
-    padding: 14px 0;
+    padding: 10px 0;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     font-size: 15px;
     outline: none;
     font-family: inherit;
@@ -147,32 +147,35 @@ input[type="email"] {
     background: transparent;
 }
 
-input:focus {
-    border-bottom-color: #00b8ff;
-}
-
 .phoneContainer {
     display: flex;
     align-items: center;
     width: 100%;
     padding-bottom: 14px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     transition: border-color 0.3s ease;
 }
 
-.phoneContainer:focus-within {
-    border-bottom-color: #00b8ff;
+.flag {
+    height: inherit;
+    margin-right: 8px;
 }
 
-.flag {
-    font-size: 20px;
-    margin-right: 8px;
+.flag img {
+    height: 14px;
 }
 
 .countryCode {
     margin-right: 8px;
     font-size: 15px;
     color: #333;
+}
+
+.dropDownArrow {
+    height: 0.5rem;
+    margin-right: 8px;
+    color: #666;
+    filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(223deg) brightness(100%) contrast(85%);
 }
 
 .phoneInput {
@@ -189,18 +192,14 @@ textarea {
     width: 100%;
     padding: 14px 0;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     font-size: 15px;
     outline: none;
     font-family: inherit;
     resize: vertical;
-    min-height: 60px;
+    min-height: 50px;
     transition: border-color 0.3s ease;
     background: transparent;
-}
-
-textarea:focus {
-    border-bottom-color: #00b8ff;
 }
 
 .submitButton {
@@ -231,7 +230,8 @@ textarea:focus {
 }
 
 ::placeholder {
-    color: #000000;
+    color: #001C3F;
+    font-size: 0.85rem;
 }
 
 @media (max-width: 1024px) {
