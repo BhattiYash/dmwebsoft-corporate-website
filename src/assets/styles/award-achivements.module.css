@@ -1,0 +1,109 @@
+.section {
+    padding: 80px 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.left {
+    flex: 1;
+    position: relative;
+    margin-right: 120px;
+}
+
+.left h2 {
+    font-size: 3.1rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.left h2 span {
+    color: #009cfb;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.trophy {
+    position: absolute;
+    right: -50px;
+    bottom: 70px;
+    width: 133px;
+    height: 156px;
+}
+
+.right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 230px;
+    box-shadow: 0 6px 25px 0 rgba(0, 156, 251, 0.07);
+    border: 1px solid #f0f8ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 168, 232, 0.1);
+}
+
+.card img {
+    /* max-width: 80%; */
+    height: 45px;
+    object-fit: contain;
+}
+
+.five_star {
+    width: 80px;
+    margin-top: 5px;
+
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 992px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right {
+        justify-content: center;
+    }
+
+    .trophy {
+        position: static;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .right {
+        grid-template-columns: 1fr;
+        /* Stack cards on mobile */
+    }
+}

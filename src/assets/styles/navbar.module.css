@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "General Sans Variable", sans-serif;
+    font-weight: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    /* transition: box-shadow0.3s ease, height 0.3s ease; */
+    transition-property: transform, background, box-shadow, line-height, height;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.78, .13, .15, .86);
+    height: 120px;
+}
+
+.scrolled {
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .2);
+    height: 120px;
+}
+
+.subContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 100px;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.imgLogo {
+    width: 142px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarList li {
+    padding: 0 15px;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.navbarList li:hover {
+    color: #00a8ff;
+}
+
+.navbarButton {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-left: 40px;
+    padding: 18px 49px;
+    border-radius: 32px;
+    color: #ffffff;
+}

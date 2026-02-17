@@ -1,0 +1,47 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-image: url("../images/background-image-stuff/background-image-stuff-2.svg");
+  background-color: #001a33;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background-color: #00a3ff;
+  /* Bright Blue */
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #008be6;
+  transform: translateY(-2px);
+}
