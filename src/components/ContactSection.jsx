@@ -1,7 +1,7 @@
-import styles from "./contactsection.module.css"
-import aboutUsLeft from "../assets/images/about-us-left.svg"
-import Flag from "../assets/images/Flag_of_the_United_States.png"
-import dropDownArrow from "../assets/images/drop-down-image.png"
+import styles from "../assets/styles/contactsection.module.css"
+import listArrow from "../assets/images/get-started/get-started-list-arrow-icon.svg"
+import flag from "../assets/images/get-started/get-started-flag-code-1.png"
+import dropDownArrow from "../assets/images/get-started/get-started-drop-down-image.png"
 const ContactSection = () => {
   return (
     <section className={styles.section}>
@@ -16,15 +16,15 @@ const ContactSection = () => {
           <h3 className={styles.processTitle}>What's the Process ?</h3>
           <div className={styles.processList}>
             <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
+              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
               Request a Call
             </div>
             <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
+              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
               Consultation Meeting
             </div>
             <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={aboutUsLeft} alt="leftArrow" /></span>
+              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
               Crafting a Tailored Proposal
             </div>
           </div>
@@ -87,7 +87,7 @@ const ContactSection = () => {
 
             <div className={styles.formGroup}>
               <div className={styles.phoneContainer}>
-                <span className={styles.flag}><img src={Flag} alt="Country Flags" /></span>
+                <span className={styles.flag}><img src={flag} alt="Country Flags" /></span>
                 <span className={styles.countryCode}>+1</span>
                 <img src={dropDownArrow} alt="Drop-down-arrow" className={styles.dropDownArrow} />
                 <input type="tel" name="mobileNumber" placeholder="Mobile Number" className={styles.phoneInput} required />

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from './blogcarousel.module.css';
+import styles from '../assets/styles/blogcarousel.module.css';
 
 const BlogCarousel = () => {
   const blogs = [
@@ -7,7 +7,7 @@ const BlogCarousel = () => {
     { id: 2, date: "February 5, 2024", title: "Integrating AI into Web Development: Opportunities and Challenges", image: "https://dmwebsoft.com/wp-content/uploads/2024/01/How-AI-is-Transforming-Web-Development-Opportunities-and-Challenges-AI-DM-WebSoft.png" },
     { id: 3, date: "February 8, 2024", title: "Starting an AI Startup: A Step-by-Step Guide for Entrepreneurs", image: "https://dmwebsoft.com/wp-content/uploads/2024/01/Cloud-Computing-in-Web-Development-Advantages-for-Modern-Businesses-AI-DM-WebSoft-scaled.jpg" },
     { id: 4, date: "January 1, 2024", title: "No-Code Innovation: From Concept to Launch in Record Time", image: "https://dmwebsoft.com/wp-content/uploads/2024/02/Integrating-AI-into-Web-Development-Opportunities-and-Challenges-in-2024-DM-WebSoft-scaled.jpg" },
-    { id: 5, date: "December 20, 2023", title: "The Future of MERN Stack in 2026", image: "https://dmwebsoft.com/wp-content/uploads/2024/02/Starting-an-AI-Startup-A-Step-by-Step-Guide-for-Entrepreneurs-AIBlog-DM-WebSoft.jpg" },
+    { id: 5, date: "January 29, 2024", title: "TheHow AI is Transforming Web Development: Opportunities and Challenges", image: "https://dmwebsoft.com/wp-content/uploads/2024/02/Starting-an-AI-Startup-A-Step-by-Step-Guide-for-Entrepreneurs-AIBlog-DM-WebSoft.jpg" },
   ];
 
   // Calculate the width of one card + gap (approx 400px based on 1200px container)

@@ -1,16 +1,16 @@
-import styles from "./case-studies.module.css"
+import styles from "../assets/styles/case-studies.module.css"
 // IMAGE IMPORTS (adjust paths if needed)
-import aiImg from "../assets/images/case-studies-ai.png"
-import ecommerceImg from "../assets/images/case-studies-e-commerce.png"
-import travelImg from "../assets/images/case-studies-travel.png"
-import productivityImg from "../assets/images/case-studies-productivity.png"
-import fintechImg from "../assets/images/case-studies-fintech.png"
+import aiImg from "../assets/images/case-studies-section/case-studies-ai.png"
+import ecommerceImg from "../assets/images/case-studies-section/case-studies-e-commerce.png"
+import travelImg from "../assets/images/case-studies-section/case-studies-travel.png"
+import productivityImg from "../assets/images/case-studies-section/case-studies-productivity.png"
+import fintechImg from "../assets/images/case-studies-section/case-studies-fintech.png"
 
 export default function CaseStudies() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        
+
         <div className={styles.header}>
           <h2>Case Studies</h2>
           <p>Purpose-built technology that hits the mark</p>
@@ -21,7 +21,7 @@ export default function CaseStudies() {
           <div className={`${styles.card} ${styles.aiCard}`}>
             <span className={styles.tag}>AI</span>
             <div className={styles.content}>
-               <img src={aiImg} alt="AI Ecommerce" />
+              <img src={aiImg} alt="AI Ecommerce" />
             </div>
           </div>
 

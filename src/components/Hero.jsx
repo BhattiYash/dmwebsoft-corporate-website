@@ -1,7 +1,7 @@
-import styles from './hero.module.css'
-import heroSectionColoredLine from '../assets/images/hero-section-colored-line.png'
-import top_rated_agency_upwork from '../assets/images/top_rated_agency_upwork.svg'
-import heroSectionArrow from '../assets/images/whatwe-shape.svg'
+import styles from '../assets/styles/hero.module.css'
+import heroSectionColoredLine from '../assets/images/hero-section/hero-section-colored-line.png'
+import top_rated_agency_upwork from '../assets/images/hero-section/hero-section-upwork.svg'
+import heroSectionArrow from '../assets/images/hero-section/hero-section-arrow.svg'
 export default function Hero() {
   return (
     <div className={styles.container}>

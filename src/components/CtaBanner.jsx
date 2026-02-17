@@ -1,4 +1,4 @@
-import styles from './ctabanner.module.css';
+import styles from '../assets/styles/ctabanner.module.css';
 
 const CtaBanner = () => {
   return (

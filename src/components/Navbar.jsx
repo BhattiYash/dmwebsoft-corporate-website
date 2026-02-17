@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import styles from './navbar.module.css';
-import dmwebsoftLogo from '../assets/images/dm-logo.svg';
+import styles from '../assets/styles/navbar.module.css';
+import fullLogo from '../assets/images/website-logo/website-logo-full.svg';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
         <nav className={`${styles.container} ${scrolled ? styles.scrolled : ''}`}>
             <div className={styles.subContainer}>
                 <div className={styles.logo}>
-                    <img src={dmwebsoftLogo} alt="dmwebsoft-logo" className={styles.imgLogo} />
+                    <img src={fullLogo} alt="dmwebsoft-logo" className={styles.imgLogo} />
                 </div>
                 <div className={styles.navbar}>
                     <ul className={styles.navbarList}>

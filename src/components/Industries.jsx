@@ -1,10 +1,10 @@
-import styles from './industries.module.css';
-import healthCareIcon from '../assets/images/industries-section/Industries-icon1.svg';
-import fintechIcon from '../assets/images/industries-section/Industries-icon2.svg';
-import saasProductsIcon from '../assets/images/industries-section/Saas_Products_Industry.svg';
-import marketplaceIcon from '../assets/images/industries-section/Industries-icon6.svg';
-import eCommerceIcon from '../assets/images/industries-section/Industries-icon4.svg';
-import edTechIcon from '../assets/images/industries-section/EdTech_industry.svg';
+import styles from '../assets/styles/industries.module.css';
+import healthCareIcon from '../assets/images/industries-section/industries-section-healthcare.svg';
+import fintechIcon from '../assets/images/industries-section/industries-section-fintech.svg';
+import saasProductsIcon from '../assets/images/industries-section/industries-section-saas-product.svg';
+import marketplaceIcon from '../assets/images/industries-section/industries-section-marketplace.svg';
+import eCommerceIcon from '../assets/images/industries-section/industries-section-e-commerce.svg';
+import edTechIcon from '../assets/images/industries-section/industries-section-edtech-industry.svg';
 
 const Industries = () => {
   const industriesData = [

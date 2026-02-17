@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './faq.module.css';
+import styles from '../assets/styles/faq.module.css';
 const FAQ = () => {
   // State to track the index of the currently open question
   const [openIndex, setOpenIndex] = useState(0);
@@ -45,7 +45,7 @@ const FAQ = () => {
       <div className={styles["faq-container"]}>
         {faqData.map((item, index) => (
           <div key={index} className={styles["faq-item"]}>
-            <div 
+            <div
               className={`${styles["faq-question-row"]} ${openIndex === index ? styles["active"] : ''}`}
               onClick={() => handleToggle(index)}
             >
@@ -54,7 +54,7 @@ const FAQ = () => {
                 {/* Simple CSS Chevron */}
               </span>
             </div>
-            
+
             <div className={`${styles["faq-answer-container"]} ${openIndex === index ? styles["open"] : ''}`}>
               <p className={styles["faq-answer-text"]}>{item.answer}</p>
             </div>

@@ -1,4 +1,4 @@
-import styles from './statistics.module.css'
+import styles from '../assets/styles/statistics.module.css'
 export default function Statistics() {
     const statisticsData = [{
         id: 1,
@@ -25,8 +25,8 @@ export default function Statistics() {
         <>
             <div className={styles.container}>
                 <div className={styles.statistics}>
-                    {statisticsData.map((item) => (
-                        <div className={styles.stats}>
+                    {statisticsData.map((item, index) => (
+                        <div key={index} className={styles.stats}>
                             <div className={styles.styleContainer}>
                                 <h5>{item.count}</h5>
                                 <p>{item.description}</p>

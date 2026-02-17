@@ -1,15 +1,15 @@
 import { useState, useRef } from 'react';
-import styles from './testimonials.module.css';
-import testimonialImage1 from '../assets/images/testimonials/Testimonial-Image1-150x150.jpeg';
-import testimonialImage2 from '../assets/images/testimonials/Testimonial-Image4-150x150.jpeg';
-import testimonialImage3 from '../assets/images/testimonials/Testimonial-Image2-150x150.jpeg';
-import testimonialImage4 from '../assets/images/testimonials/Testimonial-Image6-150x150.jpeg';
-import testimonialImage5 from '../assets/images/testimonials/Testimonial-Image5-150x150.jpeg';
-import testimonialImage6 from '../assets/images/testimonials/Testimonial-Image10-150x150.jpeg';
-import testimonialImage7 from '../assets/images/testimonials/Testimonial-Image3-150x150.jpeg';
-import testimonialImage8 from '../assets/images/testimonials/Testimonial-Image9-150x150.jpeg';
-import testimonialImage9 from '../assets/images/testimonials/Testimonial-Image8-150x150.jpeg';
-import testimonialImage10 from '../assets/images/testimonials/Testimonial-Image7-150x150.jpeg';
+import styles from '../assets/styles/testimonials.module.css';
+import client1 from '../assets/images/client-review-section/client-review-section-client1.jpeg';
+import client2 from '../assets/images/client-review-section/client-review-section-client2.jpeg';
+import client3 from '../assets/images/client-review-section/client-review-section-client3.jpeg';
+import client4 from '../assets/images/client-review-section/client-review-section-client4.jpeg';
+import client5 from '../assets/images/client-review-section/client-review-section-client5.jpeg';
+import client6 from '../assets/images/client-review-section/client-review-section-client6.jpeg';
+import client7 from '../assets/images/client-review-section/client-review-section-client7.jpeg';
+import client8 from '../assets/images/client-review-section/client-review-section-client8.jpeg';
+import client9 from '../assets/images/client-review-section/client-review-section-client9.jpeg';
+import client10 from '../assets/images/client-review-section/client-review-section-client10.jpeg';
 
 const Testimonials = () => {
   const scrollContainerRef = useRef(null);
@@ -25,70 +25,70 @@ const Testimonials = () => {
       text: "DM WebSoft LLP exceeded our expectations! Their seasoned team of experts delivered a website that perfectly captures our brand essence. Their 15+ years of experience truly shine through in their exceptional web development skills.",
       name: "Mark Thompson",
       position: "CEO, T******* Enterprises",
-      avatar: testimonialImage1
+      avatar: client1
     },
     {
       id: 2,
       text: "Working with DM WebSoft LLP was a game-changer for our business. Their technical prowess and innovative solutions transformed our online presence. A highly recommended web development agency with a stellar track record.",
       name: "Jennifer Miller",
       position: "VP of Marketing, M****** Innovations",
-      avatar: testimonialImage2
+      avatar: client2
     },
     {
       id: 3,
       text: "We are thrilled with the results DM WebSoft LLP delivered. Their deep understanding of web development coupled with years of expertise ensured a seamless and visually stunning website. True professionals!",
       name: "Brian Harrison",
       position: "CTO, H******* Tech Solutions",
-      avatar: testimonialImage3
+      avatar: client3
     },
     {
       id: 4,
       text: "In a digital age where first impressions matter, DM WebSoft LLP crafted a website that speaks volumes. The team's attention to detail and commitment to quality set them apart. Thank you for making our vision a reality.",
       name: "Sarah Collins",
       position: "Director of Operations, C******** Enterprises",
-      avatar: testimonialImage4
+      avatar: client4
     },
     {
       id: 5,
       text: "DM WebSoft LLP's team demonstrated unparalleled expertise. Their ability to navigate complex technical challenges with ease is truly commendable. Choosing them for our web development needs was the best decision.",
       name: "Ryan Foster",
       position: "Founder, F***** Digital Ventures",
-      avatar: testimonialImage5
+      avatar: client5
     },
     {
       id: 6,
       text: "Exceptional service, unmatched skills! DM WebSoft LLP stands out as a leading web development agency. Their collaborative approach and commitment to excellence make them our go-to partner for all things web-related.",
       name: "Emily Turner",
       position: "Chief Marketing Officer, T***** Tech Solutions",
-      avatar: testimonialImage6
+      avatar: client6
     },
     {
       id: 7,
       text: "DM WebSoft LLP turned our ideas into a digital masterpiece. The seamless communication and timely delivery of our project showcased their professionalism. Highly impressed with the level of creativity and skill.",
       name: "Michael Johnson",
       position: "Head of IT, J******* Innovations",
-      avatar: testimonialImage7
+      avatar: client7
     },
     {
       id: 8,
       text: "Our experience with DM WebSoft LLP was nothing short of amazing. From concept to execution, their team provided top-notch web development services. A reliable partner for businesses looking to elevate their online presence.",
       name: "Amanda White",
       position: "Director of Creative Services, W******* Studios",
-      avatar: testimonialImage8
+      avatar: client8
     },
     {
       id: 9,
       text: "DM WebSoft LLP’s team of tech experts is second to none. Their wealth of experience reflects in the quality of their work. Our website not only meets but exceeds industry standards, thanks to their dedication.",
       name: "Jason Adams",
       position: "Chief Technology Officer, A******  Enterprises",
-      avatar: testimonialImage9
+      avatar: client9
     },
     {
       id: 10,
       text: "Choosing DM WebSoft LLP was the best investment for our web development needs. Their team’s proficiency, coupled with a customer-centric approach, made the entire process smooth and enjoyable. A pleasure to work with!",
       name: "Lauren Carter",
       position: "VP of Digital Strategy, C****** Solutions",
-      avatar: testimonialImage10
+      avatar: client10
     }
   ];
 

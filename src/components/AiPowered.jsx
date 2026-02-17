@@ -1,8 +1,8 @@
-import styles from "./ai-powered.module.css"
-import webDevelopment from "../assets/images/web-development.svg"
-import mobileDevelopment from "../assets/images/mobile-application.svg"
-import aiInfusion from "../assets/images/ai-infusion.svg"
-import staffAugmentation from "../assets/images/staff-augmentation.svg"
+import styles from "../assets/styles/ai-powered.module.css"
+import webDevelopment from "../assets/images/digital-solutions/digital-solutions-web-development.svg"
+import mobileDevelopment from "../assets/images/digital-solutions/digital-solutions-mobile-application.svg"
+import staffAugmentation from "../assets/images/digital-solutions/digital-solutions-staff-augmentation.svg"
+import aiInfusion from "../assets/images/digital-solutions/digital-solutions-ai-infusion.svg"
 export default function AiPowered() {
   return (
     <section className={styles.section}>
@@ -21,11 +21,11 @@ export default function AiPowered() {
 
         {/* SERVICES GRID */}
         <div className={styles.grid}>
-          
+
           <div className={styles.card}>
             <div className={styles.first}>
-            <img src={webDevelopment} alt="Web Development" className={styles.icon} />
-            <h3>Web Development</h3>
+              <img src={webDevelopment} alt="Web Development" className={styles.icon} />
+              <h3>Web Development</h3>
             </div>
             <p>
               We conceive and build immersive digital experiences – strategic web
@@ -35,8 +35,8 @@ export default function AiPowered() {
 
           <div className={styles.card}>
             <div className={styles.first}>
-            <img src={mobileDevelopment} alt="Mobile App Development" className={styles.icon} />
-           <h3>Mobile App Development</h3>
+              <img src={mobileDevelopment} alt="Mobile App Development" className={styles.icon} />
+              <h3>Mobile App Development</h3>
             </div>
             <p>
               End-to-end iOS and Android app engineering – we strategize,
@@ -47,8 +47,8 @@ export default function AiPowered() {
 
           <div className={styles.card}>
             <div className={styles.first}>
-            <img src={staffAugmentation} alt="Staff Augmentation" className={styles.icon} />
-            <h3>Staff Augmentation</h3>
+              <img src={staffAugmentation} alt="Staff Augmentation" className={styles.icon} />
+              <h3>Staff Augmentation</h3>
             </div>
             <p>
               Expand your tech teams with proven digital specialists – developers,
@@ -59,8 +59,8 @@ export default function AiPowered() {
 
           <div className={styles.card}>
             <div className={styles.first}>
-            <img src={aiInfusion} alt="AI Infusion" className={styles.icon} />
-            <h3>AI Infusion</h3>
+              <img src={aiInfusion} alt="AI Infusion" className={styles.icon} />
+              <h3>AI Infusion</h3>
             </div>
             <p>
               Our AI specialists enhance software capabilities via machine
