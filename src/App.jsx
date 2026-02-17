@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import styles from './components/hero.module.css'
+import styles from './assets/styles/hero.module.css'
 import Statistics from './components/Statistics'
 import CaseStudies from './components/CaseStudies'
 import AwardAchivements from './components/AwardAchivements'
@@ -15,6 +15,7 @@ import OfficeGallery from './components/OfficeGallary'
 import BlogCarousel from './components/BlogCarousel'
 import ContactBanner from './components/ContactBanner'
 import MainFooter from './components/MainFooter'
+import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -26,15 +27,16 @@ function App() {
       <CaseStudies />
       <AwardAchivements />
       <AiPowered />
-      <ContactSection/>
-      <Industries/>
-      <Testimonials/>
-      <CtaBanner/>
-      <FAQ/>
-      <OfficeGallery/>
-      <BlogCarousel/>
-      <ContactBanner/>
-      <MainFooter/>
+      <ContactSection />
+      <Industries />
+      <Testimonials />
+      <CtaBanner />
+      <FAQ />
+      <OfficeGallery />
+      <BlogCarousel />
+      <ContactBanner />
+      <MainFooter />
+      {/* <Footer /> */}
     </>
   )
 }
