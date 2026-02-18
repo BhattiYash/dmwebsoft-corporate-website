@@ -1,6 +1,6 @@
 .testimonials-section {
   width: 100%;
-  color: #001c3f;
+  color: var(--primary-blue);
   padding: 60px 0;
   overflow: visible;
 }
@@ -14,19 +14,19 @@
 
 .testimonials-heading {
   font-size: 1.9rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   text-align: center;
   margin-bottom: 50px;
   line-height: 1.3;
 }
 
 .testimonials-first {
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
 }
 
 .highlight-blue {
-  color: #0ea5e9;
-  font-weight: 600;
+  color: var(--secondary-blue);
+  font-weight: var(--weight-semibold);
 }
 
 .testimonials-wrapper {
@@ -34,13 +34,13 @@
   display: flex;
   align-items: center;
   overflow: visible;
+  max-width: 1200px;
 }
 
 .testimonials-scroll-container {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  /* Remove scroll-behavior: smooth during drag to prevent jitter */
   scroll-behavior: smooth;
   padding: 10px 0;
   padding-left: 20px;
@@ -48,22 +48,18 @@
   flex: 1;
   scrollbar-width: none;
   position: relative;
-  /* --- NEW CURSOR STYLES --- */
   cursor: grab;
   user-select: none;
-  /* Prevents text highlighting while dragging */
 }
 
 .testimonials-scroll-container.active {
   cursor: grabbing;
   scroll-behavior: auto;
-  /* Disables smooth scroll during active drag for responsiveness */
 }
 
 .author-avatar {
   pointer-events: none;
 }
-
 
 .testimonials-scroll-container::-webkit-scrollbar {
   display: none;
@@ -89,7 +85,7 @@
   font-size: 1.1rem;
   line-height: 1.5;
   margin: 0 0 32px 0;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   flex: 1;
   padding-right: 20%;
 }
@@ -117,7 +113,7 @@
 
 .author-name {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--weight-medium);
   margin: 0;
   line-height: 1.3;
 }
@@ -126,7 +122,7 @@
   font-size: 14px;
   margin: 0;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 
 .scroll-container {
@@ -165,7 +161,7 @@
 }
 
 .scroll-button i {
-  color: #00a8ff;
+  color: var(--secondary-blue);
   font-size: 2rem;
   z-index: 1;
 }
@@ -179,7 +175,6 @@
   right: 40px;
 }
 
-/* Gradient fade effect for cards behind the button */
 .testimonials-wrapper::after {
   content: '';
   position: absolute;
@@ -202,97 +197,82 @@
   transform: rotate(360deg);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
   .testimonials-heading {
-    font-size: 36px;
-    margin-bottom: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
   }
 
   .testimonial-card {
     min-width: 350px;
     max-width: 350px;
-    padding: 36px 32px;
+    flex: 0 0 350px;
+    padding: 32px 28px;
+    min-height: 290px;
+  }
+
+  .scroll-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonials-scroll-container {
+    padding-right: 100px;
+  }
+
+  .testimonials-wrapper::after {
+    width: 140px;
   }
 }
 
-@media (max-width: 768px) {
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
   .testimonials-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
-  .testimonials-container {
+  .testimonials-heading {
+    margin-bottom: 24px;
     padding: 0 16px;
   }
 
-  .testimonials-heading {
-    font-size: 28px;
-    margin-bottom: 40px;
+  .testimonials-scroll-container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .testimonials-wrapper {
-    gap: 12px;
-  }
-
+  /* 2 cards visible */
   .testimonial-card {
-    min-width: 300px;
-    max-width: 300px;
-    padding: 30px 24px;
-    min-height: 280px;
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    padding: 24px 20px;
+    margin-right: 12px;
   }
 
   .testimonial-text {
-    font-size: 15px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    padding-right: 0;
   }
 
   .author-avatar {
-    width: 48px;
-    height: 48px;
-  }
-
-  .author-name {
-    font-size: 15px;
-  }
-
-  .author-position {
-    font-size: 13px;
+    width: 4.5em;
+    height: 4.5em;
   }
 
   .scroll-button {
-    width: 40px;
-    height: 40px;
+    display: none;
   }
 
-  .scroll-button svg {
-    width: 20px;
-    height: 20px;
+  .testimonials-wrapper::after {
+    display: none;
   }
 }
 
-@media (max-width: 480px) {
-  .testimonials-heading {
-    font-size: 24px;
-    margin-bottom: 32px;
-  }
-
-  .testimonials-wrapper {
-    gap: 8px;
-  }
-
+/* 1 card visible */
+@media (max-width: 520px) {
   .testimonial-card {
-    min-width: 280px;
-    max-width: 280px;
-    padding: 24px 20px;
-  }
-
-  .scroll-button {
-    width: 36px;
-    height: 36px;
-  }
-
-  .scroll-button svg {
-    width: 18px;
-    height: 18px;
+    flex: 0 0 85%;
+    max-width: 85%;
   }
 }

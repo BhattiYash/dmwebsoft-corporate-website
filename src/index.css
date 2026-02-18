@@ -9,14 +9,28 @@
 }
 
 :root {
-    font-family: 'General Sans', sans-serif;
+    --primary-blue: #001C3F;
+    --secondary-blue: #009CFB;
+    --light-border-color: #DFDFDF;
+    --footer-below-social-media-text: #4F6B8E;
+
+    --font-main: 'General Sans', sans-serif;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 
 body {
     margin: 0;
-    font-family: 'General Sans', sans-serif;
+    font-family: var(--font-main);
+    color: var(--primary-blue);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #333;
-    background-color: #fff;
 }

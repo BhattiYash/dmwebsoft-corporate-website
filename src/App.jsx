@@ -15,7 +15,6 @@ import OfficeGallery from './components/OfficeGallary'
 import BlogCarousel from './components/BlogCarousel'
 import ContactBanner from './components/ContactBanner'
 import MainFooter from './components/MainFooter'
-import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -36,7 +35,6 @@ function App() {
       <BlogCarousel />
       <ContactBanner />
       <MainFooter />
-      {/* <Footer /> */}
     </>
   )
 }

@@ -10,12 +10,12 @@
   text-align: center;
   font-size: 3.5rem;
   margin-bottom: 50px;
-  font-family: sans-serif;
+  font-weight: var(--weight-regular);
 }
 
 .blog-title span {
-  color: #00a8ff;
-  font-weight: 600;
+  color: var(--secondary-blue);
+  font-weight: var(--weight-semibold);
 }
 
 .carousel-viewport {
@@ -41,7 +41,6 @@
   background: #fff;
   border-radius: 20px;
   border: 1px solid #DFDFDF;
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03); */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -59,32 +58,32 @@
 }
 
 .blog-date {
-  color: #001C3F;
+  color: var(--primary-blue);
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
 .blog-header-text {
   font-size: 1.15rem;
-  color: #001C3F;
+  color: var(--primary-blue);
   line-height: 1.4;
   margin-bottom: 20px;
   min-height: 65px;
-  font-weight: 500;
+  font-weight: var(--weight-medium);
 }
 
 .read-more-container {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #00a8ff;
-  font-weight: 500;
+  color: var(--secondary-blue);
+  font-weight: var(--weight-medium);
 }
 
 .arrow-circle {
   width: 50px;
   height: 55px;
-  border: 2px solid #00a8ff;
+  border: 2px solid var(--secondary-blue);
   border-left-color: transparent;
   border-radius: 50%;
   display: flex;
@@ -101,4 +100,60 @@
 .arrow-circle:hover .arrow-svg {
   transform: translateX(5px);
   margin-left: 5px;
+}
+
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+  .blog-section {
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+  }
+
+  .blog-card {
+    flex: 0 0 320px;
+  }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+  .blog-section {
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+
+  .blog-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .blog-card {
+    flex: 0 0 100%;
+    /* Show 1 card properly */
+  }
+
+  .blog-content {
+    padding: 16px;
+  }
+
+  .blog-header-text {
+    font-size: 1rem;
+    min-height: auto;
+  }
+
+  .img-box img {
+    height: 160px;
+  }
+
+  /* Carousel track might need adjustment if using Framer Motion? 
+     Framer Motion values in JSX are fixed (-390px). 
+     Ideally we update JSX but CSS override is requested.
+     If JSX has hardcoded animations, CSS might not fix the 'drag to see' logic if it auto-plays.
+     User said "other are drag to see card facilitate".
+     If it's the auto-playing carousel, I might need to stop it or let it be.
+  */
 }

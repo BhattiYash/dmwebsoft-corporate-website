@@ -5,13 +5,13 @@
 }
 
 .section {
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     width: 100%;
 }
 
 .container {
     display: flex;
-    background-color: #001C3F;
+    background-color: var(--primary-blue);
     width: 100%;
     gap: 80px;
     align-items: center;
@@ -29,7 +29,7 @@
 
 .heading {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     margin-bottom: 20px;
     margin-top: revert;
     line-height: 0.5;
@@ -39,7 +39,7 @@
 .subtitle {
     font-size: 1.7em;
     margin-bottom: 40px;
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     line-height: 1.6;
     opacity: 0.9;
     color: white;
@@ -47,7 +47,7 @@
 
 .processTitle {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     margin-bottom: 20px;
     color: white;
 }
@@ -68,7 +68,7 @@
 
 .chevron {
     margin-right: 12px;
-    color: #00b8ff;
+    color: var(--secondary-blue);
     font-size: 1.2rem;
 }
 
@@ -115,7 +115,6 @@
     font-family: 'Fasthand', cursive;
     font-size: 1.3rem;
     font-style: italic;
-    /* margin-top: 10px; */
     opacity: 0.9;
     color: white;
 }
@@ -205,12 +204,12 @@ textarea {
 .submitButton {
     width: 100%;
     padding: 16px;
-    background-color: #009CFB;
+    background-color: var(--secondary-blue);
     color: white;
     border: none;
     border-radius: 50px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 16px;
@@ -218,7 +217,7 @@ textarea {
 }
 
 .submitButton:hover {
-    background-color: #0098d9;
+    background-color: var(--secondary-blue);
 }
 
 .disclaimer {
@@ -230,34 +229,119 @@ textarea {
 }
 
 ::placeholder {
-    color: #001C3F;
+    color: var(--primary-blue);
     font-size: 0.85rem;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        gap: 60px;
-        padding: 60px 40px;
-    }
-}
-
-@media (max-width: 768px) {
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
     .container {
         gap: 40px;
-        padding: 40px 20px;
-        flex-direction: column;
+        padding: 60px 30px;
     }
 
-    .left-section {
-        max-width: 100%;
+    .leftSection {
+        margin: 20px;
     }
 
     .heading {
-        font-size: 36px;
+        font-size: 2.2rem;
     }
 
-    .form-card {
+    .subtitle {
+        font-size: 1.3em;
+    }
+
+    .formCard {
+        max-width: 400px;
         padding: 30px;
+    }
+
+    .availabilityText {
+        left: 80px;
+    }
+
+    .svg {
+        left: 40px;
+    }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 40px 16px;
+    }
+
+    /* Allow ordering */
+    .leftSection {
+        display: contents;
+    }
+
+    /* 1. Heading */
+    .heading {
+        order: 1;
+        text-align: center;
+        font-size: 2.4rem;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* 2. Subtitle */
+    .subtitle {
+        order: 2;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /* 3. Form */
+    .formCard {
+        order: 3;
         max-width: 100%;
+        width: 70%;
+        padding: 28px 22px;
+    }
+
+    /* 4. Process section */
+    .whatProcessList {
+        order: 4;
+        width: 70%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .processTitle {
+        margin-bottom: 16px;
+    }
+
+    .processList {
+        width: 100%;
+    }
+
+    .processItem {
+        font-size: 1.1rem;
+    }
+
+    /* 5. Social icons */
+    .socialIcons {
+        order: 5;
+        justify-content: flex-start;
+        width: 70%;
+        margin-top: 5px;
+    }
+
+    .submitButton {
+        margin: 0 0 20px 0;
+    }
+
+    /* Hide desktop-only visuals */
+    .availabilityText,
+    .svg,
+    .bottomClipArt {
+        display: none;
     }
 }

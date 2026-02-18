@@ -1,10 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "General Sans Variable", sans-serif;
-    font-weight: 100;
-}
+/* ===== NAVBAR — Desktop-first ===== */
 
 .container {
     display: flex;
@@ -15,7 +9,6 @@ body {
     right: 0;
     background-color: #ffffff;
     z-index: 1000;
-    /* transition: box-shadow0.3s ease, height 0.3s ease; */
     transition-property: transform, background, box-shadow, line-height, height;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.78, .13, .15, .86);
@@ -23,7 +16,6 @@ body {
 }
 
 .scrolled {
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
     box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .2);
     height: 120px;
 }
@@ -31,6 +23,7 @@ body {
 .subContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 0 100px;
     height: 100%;
@@ -62,14 +55,14 @@ body {
 
 .navbarList li {
     padding: 0 15px;
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     font-size: 20px;
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
 .navbarList li:hover {
-    color: #00a8ff;
+    color: var(--secondary-blue);
 }
 
 .navbarButton {
@@ -80,4 +73,201 @@ body {
     padding: 18px 49px;
     border-radius: 32px;
     color: #ffffff;
+    background: var(--secondary-blue);
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Tablet Quote Button — hidden by default ===== */
+.tabletQuoteButton {
+    display: none;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 32px;
+    color: #ffffff;
+    background: var(--secondary-blue);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* ===== Hamburger — hidden by default ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+
+.hamburgerLine {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate to X when active */
+.hamburgerActive .hamburgerLine:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburgerActive .hamburgerLine:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerActive .hamburgerLine:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== Overlay ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1050;
+}
+
+/* ===== Mobile Menu Drawer ===== */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: 80%;
+    max-width: 360px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 1060;
+    padding: 100px 30px 40px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: right 0.35s cubic-bezier(.78, .13, .15, .86);
+    overflow-y: auto;
+}
+
+.mobileMenuOpen {
+    transform: translateX(0);
+}
+
+.mobileNavList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.mobileNavList li {
+    padding: 16px 0;
+    font-size: 20px;
+    font-weight: var(--weight-medium);
+    color: var(--primary-blue);
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: color 0.2s ease;
+}
+
+.mobileNavList li:hover {
+    color: var(--secondary-blue);
+}
+
+.mobileQuoteButton {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 0;
+    border-radius: 32px;
+    color: #ffffff;
+    background: var(--secondary-blue);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ========================================
+   BREAKPOINT: Tablet  (max-width: 992px)
+   Show: Logo + Free Quote + Hamburger
+   ======================================== */
+@media (max-width: 992px) {
+    .container {
+        height: 80px;
+    }
+
+    .scrolled {
+        height: 80px;
+    }
+
+    .subContainer {
+        padding: 0 30px;
+    }
+
+    .imgLogo {
+        width: 120px;
+    }
+
+    /* Hide full desktop nav */
+    .navbar {
+        display: none;
+    }
+
+    /* Show tablet quote button */
+    .tabletQuoteButton {
+        display: inline-flex;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ========================================
+   BREAKPOINT: Mobile  (max-width: 767px)
+   Show: Logo + Hamburger only
+   ======================================== */
+@media (max-width: 767px) {
+    .container {
+        height: 70px;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    .scrolled {
+        height: 70px;
+    }
+
+    .subContainer {
+        padding: 0 15px;
+        /* Little space */
+        justify-content: space-between;
+        /* Ensure logo left, ham right */
+    }
+
+    .imgLogo {
+        width: 110px;
+        margin-left: 0;
+    }
+
+    .hamburger {
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    /* Hide tablet quote button */
+    .tabletQuoteButton {
+        display: none;
+    }
 }

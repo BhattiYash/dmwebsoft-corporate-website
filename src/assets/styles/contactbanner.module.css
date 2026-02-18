@@ -1,6 +1,5 @@
 .contactBanner {
-  background: #001C3F url(https://dmwebsoft.com/wp-content/uploads/2023/09/abouts-us-linear.svg) no-repeat 100% 35% / contain;
-  /* background-position: center; */
+  background: var(--primary-blue) url(https://dmwebsoft.com/wp-content/uploads/2023/09/abouts-us-linear.svg) no-repeat 100% 35% / contain;
   padding: 80px 20px 140px;
   color: #ffffff;
   text-align: center;
@@ -8,21 +7,20 @@
 
 .bannerHeading {
   font-size: 2.1rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   max-width: 850px;
   margin: 0 auto 75px;
   line-height: 1.4;
 }
 
 .connectButton {
-  background-color: #009CFB;
-  ;
+  background-color: var(--secondary-blue);
   color: white;
   border: none;
   padding: 15px 35px;
   border-radius: 30px;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -54,6 +52,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
 .iconWrapper img {
@@ -67,12 +66,87 @@
 .pillLabel {
   display: block;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
 }
 
 .pillValue {
   font-size: 1rem;
   font-weight: 450;
   color: #97bae7;
+}
 
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+  .contactBanner {
+    padding: 60px 20px 100px;
+  }
+
+  .bannerHeading {
+    font-size: 1.7rem;
+    margin-bottom: 50px;
+  }
+
+  .contactStrip {
+    gap: 30px;
+    margin: 60px 0;
+  }
+
+  .pillLabel {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+  .contactBanner {
+    padding: 40px 16px 60px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    /* Center everything */
+  }
+
+  .bannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bannerHeading {
+    font-size: 1.3rem;
+    /* Adjusted font */
+    margin-bottom: 30px;
+  }
+
+  .connectButton {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .contactStrip {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 40px 0;
+    width: 100%;
+  }
+
+  .contactPill {
+    flex-direction: column;
+    /* Center pill content */
+    text-align: center;
+  }
+
+  .pillText {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .pillLabel {
+    font-size: 1rem;
+  }
+
+  .pillValue {
+    font-size: 0.9rem;
+  }
 }

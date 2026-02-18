@@ -13,19 +13,22 @@ const ContactSection = () => {
             we will reach out to you!
           </p>
 
-          <h3 className={styles.processTitle}>What's the Process ?</h3>
-          <div className={styles.processList}>
-            <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
-              Request a Call
-            </div>
-            <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
-              Consultation Meeting
-            </div>
-            <div className={styles.processItem}>
-              <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
-              Crafting a Tailored Proposal
+
+          <div className={styles.whatProcessList}>
+            <h3 className={styles.processTitle}>What's the Process ?</h3>
+            <div className={styles.processList}>
+              <div className={styles.processItem}>
+                <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
+                Request a Call
+              </div>
+              <div className={styles.processItem}>
+                <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
+                Consultation Meeting
+              </div>
+              <div className={styles.processItem}>
+                <span className={styles.chevron}><img src={listArrow} alt="leftArrow" /></span>
+                Crafting a Tailored Proposal
+              </div>
             </div>
           </div>
 

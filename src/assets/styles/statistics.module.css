@@ -7,7 +7,7 @@
 .container {
     display: flex;
     height: 208px;
-    color: #001C3F;
+    color: var(--primary-blue);
     width: 100%;
 }
 
@@ -30,13 +30,13 @@
 
 .statistics h5 {
     font-size: 42px;
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     margin-bottom: 0;
 }
 
 .statistics p {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: var(--weight-medium);
     margin-bottom: 0;
 }
 
@@ -49,4 +49,76 @@
 .vline {
     border-right: 1px solid #F3F3F3;
     height: 60%;
+}
+
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+    .statistics {
+        height: auto;
+        padding: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .styleContainer {
+        padding: 30px 40px;
+    }
+
+    .statistics h5 {
+        font-size: 32px;
+    }
+
+    .statistics p {
+        font-size: 16px;
+    }
+
+    .container {
+        height: auto;
+    }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+    .statistics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: auto;
+        padding: 40px;
+        gap: 0;
+        width: 100%;
+    }
+
+    .stats {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Remove right border for 2nd and 4th item */
+    .stats:nth-child(2n) {
+        border-right: none;
+    }
+
+    /* Remove bottom border for 3rd and 4th item */
+    .stats:nth-child(n+3) {
+        border-bottom: none;
+    }
+
+    .styleContainer {
+        padding: 15px 10px;
+    }
+
+    .statistics h5 {
+        font-size: 2.3rem;
+    }
+
+    .statistics p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .vline {
+        display: none;
+        /* Remove original vline as we use borders */
+    }
 }

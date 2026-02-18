@@ -11,6 +11,8 @@
     flex-direction: column;
     justify-content: center;
     max-width: 1200px;
+    gap: 60px;
+    padding: 0 20px;
 }
 
 .header {
@@ -22,20 +24,20 @@
 
 .header h2 {
     font-size: 3.5rem;
-    font-weight: 400;
+    font-weight: var(--weight-regular);
     margin-bottom: 5px;
 }
 
 .header h2 span {
-    font-weight: 600;
-    color: #009cfb;
+    font-weight: var(--weight-semibold);
+    color: var(--secondary-blue);
 }
 
 .header p {
     font-size: 1.3rem;
     text-align: center;
-    color: #001C3F;
-    font-weight: 400;
+    color: var(--primary-blue);
+    font-weight: var(--weight-regular);
     line-height: 1.5;
     width: 85%;
 }
@@ -61,24 +63,105 @@
 .card .icon {
     font-size: 40px;
     margin-bottom: 16px;
-    color: #0f172a;
+    color: var(--primary-blue);
 }
 
 .card h3 {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: var(--weight-bold);
     width: 80%;
 }
 
 .card p {
     font-size: 18px;
     line-height: 1.5;
-    color: #000;
+    color: var(--primary-blue);
     margin-top: 90px;
-    /* word-wrap: break-word; */
 }
 
 .card img {
     width: 60px;
     height: 60px;
+}
+
+/* ===== TABLET (max-width: 992px) ===== */
+@media (max-width: 992px) {
+    .section {
+        margin: 60px 0;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin: 0;
+    }
+
+    .header h2 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        width: 95%;
+        font-size: 1.1rem;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card p {
+        margin-top: 20px;
+    }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+    .section {
+        margin: 40px 0;
+    }
+
+    .container {
+        gap: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .header h2 {
+        /* font-size: 1.8rem; */
+        text-align: center;
+    }
+
+    .header p {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+
+    .card .first {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card h3 {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .card p {
+        margin: auto 20px;
+        font-size: 16px;
+        text-align: center;
+    }
 }

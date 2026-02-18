@@ -2,10 +2,11 @@
   position: relative;
   background: #ffffff;
   width: 100%;
-  height: 630px;
+  height: auto;
+  min-height: 630px;
   display: flex;
   justify-content: center;
-  color: #001C3F;
+  color: var(--primary-blue);
 }
 
 .footerContent {
@@ -20,7 +21,7 @@
 .unionImg {
   position: relative;
   top: -80px;
-  margin-top: -153.4px;
+  margin-top: -153px;
   padding-top: 97px;
   padding-bottom: 0;
   width: 100%;
@@ -51,25 +52,26 @@
 .social {
   width: 48px;
   height: 48px;
-  border: 3.5px solid #00a8ff;
+  border: 3.5px solid var(--secondary-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00a8ff;
+  color: var(--secondary-blue);
   font-size: 1.3rem;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .social:hover {
-  background: #00a8ff;
+  background: var(--secondary-blue);
   color: #fff;
 }
 
 .socialText {
   margin-top: 20px;
-  color: #001C3F;
-  font-size: 1.3rem;
+  color: #4F6B8E;
+  font-size: 1rem;
 }
 
 /* GRID */
@@ -77,12 +79,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .column {
   padding: 0 32px;
   border-right: 1px solid #eee;
-  height: 330px;
+  min-height: 200px;
 }
 
 .column:last-child {
@@ -92,8 +95,8 @@
 .column h5 {
   font-size: 1.3rem;
   margin-bottom: 22px;
-  color: #001a3d;
-  font-weight: 500;
+  color: var(--primary-blue);
+  font-weight: var(--weight-medium);
 }
 
 .column ul {
@@ -102,14 +105,14 @@
 }
 
 .column li {
-  color: #001C3F;
+  color: var(--primary-blue);
   margin-bottom: 10px;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 
 .column li:hover {
-  color: #00a8ff;
+  color: var(--secondary-blue);
 }
 
 /* BOTTOM */
@@ -120,11 +123,13 @@
   padding: 28px 0;
   font-size: 1rem;
   background-color: #FAFAFA;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .legal {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 
 .legal a {
@@ -134,13 +139,114 @@
 }
 
 .legal a:hover {
-  color: #00a8ff;
+  color: var(--secondary-blue);
 }
 
-/* RESPONSIVE */
+/* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
+  .footerWrapper {
+    min-height: auto;
+  }
+
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 0;
+  }
+
+  .column {
+    flex: 0 0 33.33%;
+    border-right: none;
+    padding: 0 20px;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+
+  .unionImg {
+    top: 0;
+    margin-top: 0;
+    padding-top: 40px;
+    background-size: contain;
+  }
+
+  .footerContent {
+    padding-top: 40px;
+  }
+
+  .logo {
+    height: 80px;
+  }
+}
+
+/* ===== MOBILE (max-width: 767px) ===== */
+@media (max-width: 767px) {
+  .footerContent {
+    padding: 30px 16px 0;
+  }
+
+  .unionImg {
+    padding-top: 0;
+    background-position: bottom center;
+    /* Fix background */
+    background-size: cover;
+  }
+
+  .topSection {
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Column layout */
+    gap: 20px;
+    justify-items: center;
+    text-align: left;
+    /* Keep text left aligned in columns? User said 'grid class adjustment', usually means columns */
+  }
+
+  .column {
+    padding: 0;
+    border-right: none;
+    border-bottom: none;
+    /* Remove borders for cleaner grid */
+    margin-bottom: 20px;
+    width: auto;
+    min-height: auto;
+    flex: none;
+    /* Reset flex */
+  }
+
+  .column:last-child {
+    grid-column: span 2;
+    /* Make last item full width if odd number? Or just 2 columns. */
+    text-align: center;
+  }
+
+  /* Reset flex layout from previous mobile style */
+  .grid {
+    flex-direction: row;
+    /* It was column before */
+    flex-wrap: wrap;
+  }
+
+  /* Wait, replace_file_content replaces the whole block. 
+     I should ensure 'display: grid' overrides 'display: flex' from .grid base rule. 
+  */
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .legal a {
+    margin-right: 16px;
+    font-size: 0.9rem;
   }
 }
