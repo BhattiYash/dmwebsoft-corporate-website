@@ -135,7 +135,7 @@
     }
 
     .header p {
-        width: 100%;
+        width: 90%;
         font-size: 1rem;
         text-align: center;
     }
@@ -160,7 +160,7 @@
     }
 
     .card p {
-        margin: auto 20px;
+        margin: auto 5%;
         font-size: 16px;
         text-align: center;
     }

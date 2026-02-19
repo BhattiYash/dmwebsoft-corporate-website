@@ -6,27 +6,32 @@
   min-height: 630px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   color: var(--primary-blue);
 }
 
 .footerContent {
-  width: 100%;
   position: relative;
-  z-index: 2;
+  top: -80px;
+  padding-bottom: 0;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 80px;
 }
 
-.unionImg {
-  position: relative;
-  top: -80px;
+.innerHandler {
+  position: absolute;
+  top: 56px;
   margin-top: -153px;
   padding-top: 97px;
   padding-bottom: 0;
   width: 100%;
   background: url("https://dmwebsoft.com/wp-content/uploads/2023/09/Union.png") no-repeat top center;
+  background-size: cover;
 }
+
+.unionImg {}
 
 .topSection {
   text-align: center;
@@ -136,29 +141,29 @@
   margin-right: 40px;
   text-decoration: none;
   color: #616161;
-}
 
-.legal a:hover {
-  color: var(--secondary-blue);
-}
-
-/* ===== TABLET (max-width: 992px) ===== */
-@media (max-width: 992px) {
-  .footerWrapper {
-    min-height: auto;
+  containegal a:hover {
+    color: var(--secondary-blue);
   }
 
-  .grid {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 0;
-  }
+  /* ===== TABLET (max-width: 992px) ===== */
+  @media (max-width: 992px) {
+    .footerWrapper {
+      min-height: auto;
+    }
 
-  .column {
-    flex: 0 0 33.33%;
-    border-right: none;
-    padding: 0 20px;
-    min-height: auto;
+    .grid {
+      flex-wrap: wrap;
+      jufy-cont0nt: ter;
+      gap: 20px 0;
+    }
+
+    .column {
+      flex: widh
+    }
+
+    ding: 0 20px;
+    mheight: auto;
     margin-bottom: 20px;
   }
 
@@ -166,12 +171,11 @@
     top: 0;
     margin-top: 0;
     padding-top: 40px;
-    background-size: contain;
+    background-position: bottom center;
+    background-size: cover;
   }
 
-  .footerContent {
-    padding-top: 40px;
-  }
+  .footerContent {}
 
   .logo {
     height: 80px;
@@ -181,15 +185,22 @@
 /* ===== MOBILE (max-width: 767px) ===== */
 @media (max-width: 767px) {
   .footerContent {
-    padding: 30px 16px 0;
+    padding: 0;
+    position: relative;
+    /* top: -120px; */
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
-  .unionImg {
-    padding-top: 0;
-    background-position: bottom center;
-    /* Fix background */
+  .innerHandler {
+    /* padding-top: 100px; */
+    /* background: url("https://dmwebsoft.com/wp-content/uploads/2023/09/Union.png") no-repeat top center;
     background-size: cover;
+    width: 100%; */
   }
+
+  .unionImg {}
 
   .topSection {
     margin-bottom: 30px;
@@ -209,6 +220,7 @@
     /* Keep text left aligned in columns? User said 'grid class adjustment', usually means columns */
   }
 
+
   .column {
     padding: 0;
     border-right: none;
@@ -218,19 +230,14 @@
     width: auto;
     min-height: auto;
     flex: none;
+    text-align: center;
     /* Reset flex */
   }
 
-  .column:last-child {
-    grid-column: span 2;
-    /* Make last item full width if odd number? Or just 2 columns. */
-    text-align: center;
-  }
+  .column:last-child {}
 
-  /* Reset flex layout from previous mobile style */
   .grid {
     flex-direction: row;
-    /* It was column before */
     flex-wrap: wrap;
   }
 

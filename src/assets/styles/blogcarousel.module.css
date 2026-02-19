@@ -127,7 +127,7 @@
   }
 
   .blog-title {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     margin-bottom: 24px;
   }
 
@@ -146,7 +146,7 @@
   }
 
   .img-box img {
-    height: 160px;
+    height: max-content;
   }
 
   /* Carousel track might need adjustment if using Framer Motion? 

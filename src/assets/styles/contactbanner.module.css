@@ -99,9 +99,10 @@
 /* ===== MOBILE (max-width: 767px) ===== */
 @media (max-width: 767px) {
   .contactBanner {
-    padding: 40px 16px 60px;
-    background-size: cover;
-    background-position: center;
+    background: var(--primary-blue) url(https://dmwebsoft.com/wp-content/uploads/2023/09/abouts-us-linear.svg) no-repeat 100% 35% / contain;
+    padding: 30px;
+    /* background-size: contain;
+    background-position: center; */
     text-align: center;
     /* Center everything */
   }
@@ -110,43 +111,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+  }
+
+  .iconWrapper {
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
   .bannerHeading {
-    font-size: 1.3rem;
-    /* Adjusted font */
-    margin-bottom: 30px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    padding: 20px 0;
   }
 
   .connectButton {
-    padding: 12px 28px;
-    font-size: 1rem;
+    /* padding: 12px 28px;
+    font-size: 1rem; */
   }
 
   .contactStrip {
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    margin: 40px 0;
+    position: relative;
     width: 100%;
+    margin-top: 40px;
   }
 
+  .innerContactStrip {}
+
   .contactPill {
-    flex-direction: column;
+    /* flex-direction: column; */
     /* Center pill content */
-    text-align: center;
+    /* text-align: center; */
+    align-items: flex-start;
+    margin: 20px 0;
   }
 
   .pillText {
-    text-align: center;
-    margin-top: 10px;
+    /* text-align: center; */
+    /* margin-top: 10px; */
   }
 
   .pillLabel {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .pillValue {
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
   }
 }
