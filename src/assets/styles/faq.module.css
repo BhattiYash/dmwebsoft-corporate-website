@@ -21,6 +21,7 @@
 .faq-container {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .faq-item {
@@ -42,6 +43,7 @@
   font-weight: var(--weight-medium);
   color: var(--secondary-blue);
   margin: 0;
+  text-align: left;
 }
 
 /* Dropdown Arrow Styling */
@@ -79,6 +81,7 @@
   color: var(--primary-blue);
   margin: 0;
   font-weight: var(--weight-regular);
+  text-align: left;
 }
 
 .faq-divider {
@@ -118,6 +121,7 @@
 
   .faq-question-row {
     padding: 14px 0;
+    align-items: center;
     margin-bottom: 10px;
     gap: 40px;
   }
