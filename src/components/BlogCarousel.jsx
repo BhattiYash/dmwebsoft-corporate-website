@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../assets/styles/blogcarousel.module.css';
 
@@ -10,8 +11,35 @@ const BlogCarousel = () => {
     { id: 5, date: "January 29, 2024", title: "TheHow AI is Transforming Web Development: Opportunities and Challenges", image: "https://dmwebsoft.com/wp-content/uploads/2024/02/Starting-an-AI-Startup-A-Step-by-Step-Guide-for-Entrepreneurs-AIBlog-DM-WebSoft.jpg" },
   ];
 
-  // Calculate the width of one card + gap (approx 400px based on 1200px container)
-  const cardStep = -390;
+  const trackRef = useRef(null);
+  const [cardStep, setCardStep] = useState(-395);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // If we can measure the first card, dynamically get its width + gap (25px)
+      if (trackRef.current) {
+        const firstCard = trackRef.current.querySelector('.' + styles["blog-card"]);
+        if (firstCard) {
+          setCardStep(-(firstCard.offsetWidth + 25));
+        }
+      }
+    };
+
+    // Slight delay to ensure CSS has applied on mount, then measure
+    setTimeout(handleResize, 50);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Generate the animation values dynamically based on cardStep
+  const animationSteps = [
+    0,
+    cardStep, cardStep,
+    cardStep * 2, cardStep * 2,
+    cardStep * 3, cardStep * 3,
+    cardStep * 4, cardStep * 4,
+    cardStep * 5, cardStep * 5
+  ];
 
   return (
     <section className={styles["blog-section"]}>
@@ -19,31 +47,18 @@ const BlogCarousel = () => {
 
       <div className={styles["carousel-viewport"]}>
         <motion.div
+          ref={trackRef}
           className={styles["carousel-track"]}
           drag="x"
-          dragConstraints={{ right: 0, left: -2000 }}
-          animate={{
-            // We repeat values to "hold" the position during the 3s delay
-            x: [0, -390, -390, -780, -780, -1170, -1170, -1560, -1560, -1950, -1950]
-          }}
+          dragConstraints={{ right: 0, left: -(Math.abs(cardStep) * blogs.length) }}
+          animate={{ x: animationSteps }}
           transition={{
             x: {
               repeat: Infinity,
-              duration: 16.5, // (3s pause + 0.3s move) * 5 steps
+              duration: 16.5,
               ease: "easeInOut",
-              // Each pair represents: [Arrive at position, Stay until...]
               times: [
-                0,    // Start at 0
-                0.02, // Arrive at -400 (after 0.3s)
-                0.20, // Stay at -400 (for 3s)
-                0.22, // Arrive at -800 (after 0.3s)
-                0.40, // Stay at -800 (for 3s)
-                0.42, // ...and so on
-                0.60,
-                0.62,
-                0.80,
-                0.82,
-                1
+                0, 0.02, 0.20, 0.22, 0.40, 0.42, 0.60, 0.62, 0.80, 0.82, 1
               ],
             }
           }}
