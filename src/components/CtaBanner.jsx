@@ -5,7 +5,7 @@ const CtaBanner = () => {
     <section className={styles.bannerContainer}>
       <div className={styles.content}>
         <h2 className={styles.title}>
-          Need expert feedback <br /> on your idea?
+          Need expert feedback on your idea?
         </h2>
         <button className={styles.ctaButton}>
           Schedule A Meeting

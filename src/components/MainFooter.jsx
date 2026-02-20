@@ -14,9 +14,7 @@ export default function MainFooter() {
   return (
     <>
       <footer className={styles.footerWrapper}>
-        {/* CONTENT */}
-
-        <div className={styles.footerContent}>
+        <div className={`${styles.footerContent} ${styles.innerHandler}`}>
           <div className={styles.unionImg}>
             {/* TOP */}
             <div className={styles.topSection}>
@@ -49,15 +47,16 @@ export default function MainFooter() {
         </div>
 
         {/* BOTTOM */}
-      </footer>
-      <div className={styles.bottomBar}>
-        <div className={styles.legal}>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Site Map</a>
+        <div className={styles.bottomBar}>
+          <div className={styles.legal}>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Site Map</a>
+          </div>
+          <p>© 2026 DM WebSoft LLP All Rights Reserved.</p>
         </div>
-        <p>© 2026 DM WebSoft LLP All Rights Reserved.</p>
-      </div>
+
+      </footer>
     </>
   );
 }

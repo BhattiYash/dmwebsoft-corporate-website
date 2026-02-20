@@ -14,27 +14,29 @@ const ContactBanner = () => {
         <button className={styles.connectButton}>Connect with us</button>
 
         <div className={styles.contactStrip}>
-          <div className={styles.contactPill}>
-            <div className={styles.iconWrapper}><img src={wp} alt="Whatsapp Logo" /></div>
-            <div className={styles.pillText}>
-              <span className={styles.pillLabel}>Talk with us</span>
-              <span className={styles.pillValue}>+61 406 871 264</span>
+          <div className={styles.innerContactStrip}>
+            <div className={styles.contactPill}>
+              <div className={styles.iconWrapper}><img src={wp} alt="Whatsapp Logo" /></div>
+              <div className={styles.pillText}>
+                <span className={styles.pillLabel}>Talk with us</span>
+                <span className={styles.pillValue}>+61 406 871 264</span>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.contactPill}>
-            <div className={styles.iconWrapper}><img src={skype} alt="Skype Logo" /></div>
-            <div className={styles.pillText}>
-              <span className={styles.pillLabel}>Chat with us</span>
-              <span className={styles.pillValue}>dmwebsoft</span>
+            <div className={styles.contactPill}>
+              <div className={styles.iconWrapper}><img src={skype} alt="Skype Logo" /></div>
+              <div className={styles.pillText}>
+                <span className={styles.pillLabel}>Chat with us</span>
+                <span className={styles.pillValue}>dmwebsoft</span>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.contactPill}>
-            <div className={styles.iconWrapper}><img src={email} alt="Email Logo" /></div>
-            <div className={styles.pillText}>
-              <span className={styles.pillLabel}>Mail us</span>
-              <span className={styles.pillValue}>info@dmwebsoft.com</span>
+            <div className={styles.contactPill}>
+              <div className={styles.iconWrapper}><img src={email} alt="Email Logo" /></div>
+              <div className={styles.pillText}>
+                <span className={styles.pillLabel}>Mail us</span>
+                <span className={styles.pillValue}>info@dmwebsoft.com</span>
+              </div>
             </div>
           </div>
         </div>
