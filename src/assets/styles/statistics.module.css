@@ -6,14 +6,14 @@
 
 .container {
     display: flex;
-    height: 208px;
+    height: max-content;
     color: var(--primary-blue);
     width: 100%;
 }
 
 .statistics {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     height: 257px;
     margin: 0 auto;
@@ -44,23 +44,44 @@
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.vline {
-    border-right: 1px solid #F3F3F3;
+.stats:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
     height: 60%;
+    border-right: 1px solid #F3F3F3;
+}
+
+/* ===== Mid-size desktops ===== */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .styleContainer {
+        padding: 40px;
+    }
+
+    .statistics h5 {
+        font-size: 36px;
+    }
+
+    .statistics p {
+        font-size: 17px;
+    }
 }
 
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
     .statistics {
-        height: auto;
-        padding: 20px 0;
-        flex-wrap: wrap;
+        /* margin: 30px 0; */
+        height: 100%;
     }
 
     .styleContainer {
-        padding: 30px 40px;
+        /* padding: 30px 40px; */
+        padding: 0;
     }
 
     .statistics h5 {
@@ -72,26 +93,36 @@
     }
 
     .container {
-        height: auto;
+        height: 200px;
+        margin: 40px 0;
     }
+
 }
 
 /* ===== MOBILE (max-width: 767px) ===== */
 @media (max-width: 767px) {
+    .container {
+        height: 100%;
+    }
+
     .statistics {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
         padding: 40px;
-        gap: 0;
-        width: 100%;
     }
 
     .stats {
         flex-direction: column;
         width: 100%;
+        height: 100%;
         justify-content: center;
+        /* border-bottom: 1px solid #F3F3F3; */
+        /* border-right: 1px solid #F3F3F3; */
+        margin: 10px 0;
+    }
+
+    .stats::after {
+        display: none;
     }
 
     /* Remove right border for 2nd and 4th item */
@@ -104,9 +135,6 @@
         border-bottom: none;
     }
 
-    .styleContainer {
-        padding: 15px 10px;
-    }
 
     .statistics h5 {
         font-size: 2.3rem;
@@ -115,10 +143,5 @@
     .statistics p {
         font-size: 1rem;
         text-align: center;
-    }
-
-    .vline {
-        display: none;
-        /* Remove original vline as we use borders */
     }
 }

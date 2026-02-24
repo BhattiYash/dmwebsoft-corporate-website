@@ -20,9 +20,7 @@ export default function CaseStudies() {
           {/* Card 1: AI (Spans 2/4 columns) */}
           <div className={`${styles.card} ${styles.aiCard}`}>
             <span className={styles.tag}>AI</span>
-            <div className={styles.content}>
-              <img src={aiImg} alt="AI Ecommerce" />
-            </div>
+            <img src={aiImg} alt="AI Ecommerce" />
           </div>
 
           {/* Card 2: E-commerce (Spans 2/4 columns) */}

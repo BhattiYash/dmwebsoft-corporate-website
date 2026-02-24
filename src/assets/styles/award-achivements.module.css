@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
 }
 
 .main {
@@ -79,22 +78,23 @@
 
 .five_star {
     width: 80px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
     .main {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        gap: 30px;
     }
 
     .left {
         margin-right: 0;
+        width: 200px;
     }
 
     .left h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .right {
@@ -104,11 +104,15 @@
 
     .card {
         width: 100%;
+        height: 100%;
+        padding: 20px;
     }
 
     .trophy {
-        position: static;
-        margin: 20px auto;
+        right: 30px;
+        bottom: 50px;
+        width: 110px;
+        height: 130px;
     }
 }
 
@@ -130,13 +134,17 @@
     }
 
     .left {
-        margin-right: 0;
+        margin-right: 120px;
     }
 
     .left h2 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         margin-bottom: 20px;
         text-align: left;
+    }
+
+    .textWrapper {
+        width: 100%;
     }
 
     .right {
@@ -161,7 +169,7 @@
 
     .trophy {
         position: absolute;
-        right: -50px;
+        right: -120px;
         bottom: 70px;
         width: 133px;
         height: 156px;
@@ -169,5 +177,31 @@
 
     .card img {
         height: 2rem;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .left h2 {
+        font-size: 2.2rem;
+    }
+
+    .left {
+        margin-right: 70px;
+    }
+
+    .left img {
+        width: 100px;
+        height: 100px;
+        right: -65px;
+        bottom: 65px;
+    }
+
+    .right {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(150px, auto);
+    }
+
+    .card {
+        max-width: 250px;
     }
 }

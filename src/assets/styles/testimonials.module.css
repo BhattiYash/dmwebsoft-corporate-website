@@ -2,13 +2,14 @@
   width: 100%;
   color: var(--primary-blue);
   padding: 60px 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .testimonials-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  padding-left: 100px;
   overflow: hidden;
 }
 
@@ -18,6 +19,7 @@
   text-align: center;
   margin-bottom: 50px;
   line-height: 1.3;
+  padding-right: 100px;
 }
 
 .testimonials-first {
@@ -35,50 +37,43 @@
   align-items: center;
   overflow: visible;
   max-width: 100%;
-  margin-left: 100px;
 }
 
-.testimonials-scroll-container {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-  padding-left: 20px;
-  padding-right: 160px;
-  flex: 1;
-  scrollbar-width: none;
-  position: relative;
+/* Viewport clips the overflow — extends full right */
+.testimonials-viewport {
+  width: 100%;
+  overflow: hidden;
   cursor: grab;
-  user-select: none;
+  padding: 10px 0;
 }
 
-.testimonials-scroll-container.active {
+.testimonials-viewport:active {
   cursor: grabbing;
-  scroll-behavior: auto;
 }
 
-.author-avatar {
-  pointer-events: none;
-}
-
-.testimonials-scroll-container::-webkit-scrollbar {
-  display: none;
+/* Track holds all cards */
+.testimonials-track {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .testimonial-card {
   background-color: #ffffff;
   border-radius: 16px;
   padding: 40px;
-  max-width: 420px;
   flex-shrink: 0;
   box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 320px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 0 0 420px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .testimonial-text {
@@ -103,6 +98,7 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  pointer-events: none;
 }
 
 .author-info {
@@ -125,12 +121,7 @@
   font-weight: var(--weight-regular);
 }
 
-.scroll-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Right arrow only */
 .scroll-button {
   position: absolute;
   width: 94px;
@@ -150,31 +141,23 @@
   z-index: 10;
 }
 
-.scroll-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 20px;
-  bottom: 0;
-  transition: transform 0.5s ease;
-}
-
 .scroll-button i {
   color: var(--secondary-blue);
   font-size: 2rem;
   z-index: 1;
 }
 
-.scroll-left {
-  left: 20px;
-  display: none;
-}
-
 .scroll-right {
   right: 40px;
 }
 
+.scroll-button:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Fade edge on right */
 .testimonials-wrapper::after {
   content: '';
   position: absolute;
@@ -187,27 +170,19 @@
   z-index: 5;
 }
 
-.scroll-button:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-  transform: scale(1.05);
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.scroll-button:hover::before {
-  transform: rotate(360deg);
-}
-
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
+  .testimonials-container {
+    padding-left: 40px;
+  }
+
   .testimonials-heading {
     font-size: 1.6rem;
     margin-bottom: 40px;
+    padding-right: 40px;
   }
 
   .testimonial-card {
-    min-width: 350px;
-    max-width: 350px;
-    flex: 0 0 350px;
     padding: 32px 28px;
     min-height: 290px;
   }
@@ -217,8 +192,8 @@
     height: 60px;
   }
 
-  .testimonials-scroll-container {
-    padding-right: 100px;
+  .scroll-right {
+    right: 20px;
   }
 
   .testimonials-wrapper::after {
@@ -232,26 +207,17 @@
     padding: 40px 0;
   }
 
+  .testimonials-container {
+    padding-left: 16px;
+  }
+
   .testimonials-heading {
     margin-bottom: 24px;
     padding: 0 16px;
   }
 
-  .testimonials-wrapper {
-    margin-left: 0;
-  }
-
-  .testimonials-scroll-container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  /* 2 cards visible */
   .testimonial-card {
-    flex: 0 0 calc(50% - 12px);
-    max-width: calc(50% - 12px);
     padding: 24px 20px;
-    margin-right: 12px;
   }
 
   .testimonial-text {
@@ -270,13 +236,5 @@
 
   .testimonials-wrapper::after {
     display: none;
-  }
-}
-
-/* 1 card visible */
-@media (max-width: 520px) {
-  .testimonial-card {
-    flex: 0 0 85%;
-    max-width: 85%;
   }
 }

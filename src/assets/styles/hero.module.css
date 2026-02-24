@@ -10,25 +10,29 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     top: 80px;
     width: 100%;
     height: 790px;
+    padding: 0 100px;
 }
 
 .contentHero {
     position: relative;
-    right: 110px;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .contentHero h1 {
     color: var(--primary-blue);
     font-size: 70px;
     font-weight: var(--weight-semibold);
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .elementLine {
@@ -38,23 +42,26 @@ body {
 
 .buttonContainer {
     margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
 }
 
-button:nth-child(2) {
+.button:nth-child(2) {
     background-color: var(--secondary-blue);
 }
 
 .button {
-    background-color: var(--primary-blue);
+    background-color: #061937;
     color: #ffffff;
     font-weight: var(--weight-medium);
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    margin-right: 25px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     border-radius: 32px;
     padding: 15px 30px;
     border: none;
     cursor: pointer;
+    width: 240px;
 }
 
 .ratedPlus {
@@ -69,13 +76,14 @@ button:nth-child(2) {
     font-size: 20px;
     margin: 0;
     position: relative;
-    bottom: 20px;
-    left: 65px;
+    bottom: 15px;
+    right: -20px;
 }
 
 .spanText {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 5px;
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
@@ -97,12 +105,16 @@ button:nth-child(2) {
 .extraElement {
     display: flex;
     flex-direction: column;
-    margin-left: 430px;
+    align-items: flex-end;
+    margin-left: 200px;
+    margin-top: 0px;
 }
 
 .extraElement img {
     width: 100px;
-    height: 87px;
+    height: auto;
+    position: relative;
+    right: 40px;
 }
 
 /* ===== TABLET (max-width: 992px) ===== */
@@ -114,15 +126,28 @@ button:nth-child(2) {
     }
 
     .contentHero {
-        right: 0;
+        top: 10px;
     }
 
     .contentHero h1 {
-        font-size: 48px;
+        font-size: 3.8rem;
+    }
+
+    .contentHero {
+        align-items: center;
+        text-align: center;
+    }
+
+    .spanText {
+        justify-content: center;
+    }
+
+    .buttonContainer {
+        justify-content: center;
     }
 
     .elementLine {
-        width: 350px;
+        width: 460px;
         height: 60px;
     }
 
@@ -132,8 +157,8 @@ button:nth-child(2) {
 
     .button {
         font-size: 1rem;
-        padding: 12px 24px;
-        margin-right: 15px;
+        padding: 18px 20px;
+        width: 200px;
     }
 
     .extraElement {
@@ -141,13 +166,13 @@ button:nth-child(2) {
     }
 
     .extraElement img {
-        width: 80px;
-        height: 70px;
+        width: 100px;
+        left: 10px;
     }
 
     .supportText {
-        font-size: 16px;
-        left: 50px;
+        font-size: 1.3rem;
+        left: 80px;
     }
 }
 
@@ -160,19 +185,15 @@ button:nth-child(2) {
     .container {
         height: auto;
         min-height: 500px;
-        top: 35px;
+        top: 50px;
         padding: 40px 16px;
         flex-direction: column;
         justify-content: center;
     }
 
     .contentHero {
-        right: 0;
         text-align: center;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .contentHero h1 {
@@ -198,24 +219,28 @@ button:nth-child(2) {
     }
 
     .buttonContainer {
-        margin-top: 50px;
+        margin: 50px 0;
         display: flex;
         align-items: center;
         gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 100%;
     }
 
     .button {
         font-size: 0.9rem;
         padding: 16px 28px;
-        margin-right: 0;
+        width: 220px;
+    }
+
+    .button:nth-child(2) {
+        font-size: 0.9rem;
+        padding: 16px 28px;
+        width: 220px;
     }
 
     .extraElement {
-        display: none;
-    }
-
-    .supportText {
         display: none;
     }
 }

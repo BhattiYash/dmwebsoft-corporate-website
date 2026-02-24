@@ -76,21 +76,6 @@
 
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
-  .office-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .office-title {
-    font-size: 2.5rem;
-  }
-
-  .office-card {
-    height: 300px;
-  }
-}
-
-/* ===== MOBILE (max-width: 767px) ===== */
-@media (max-width: 767px) {
   .office-section {
     display: none;
   }

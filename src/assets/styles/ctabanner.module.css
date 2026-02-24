@@ -51,6 +51,10 @@
     height: 300px;
   }
 
+  .content {
+    width: 70%;
+  }
+
   .title {
     font-size: 2rem;
   }

@@ -34,16 +34,22 @@
   display: flex;
   gap: 25px;
   width: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .blog-card {
-  flex: 0 0 370px;
   background: #fff;
   border-radius: 20px;
   border: 1px solid #DFDFDF;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .img-box img {
@@ -51,6 +57,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
+  pointer-events: none;
 }
 
 .blog-content {
@@ -113,10 +120,6 @@
     font-size: 2.5rem;
     margin-bottom: 35px;
   }
-
-  .blog-card {
-    flex: 0 0 320px;
-  }
 }
 
 /* ===== MOBILE (max-width: 767px) ===== */
@@ -127,13 +130,7 @@
   }
 
   .blog-title {
-    /* font-size: 1.8rem; */
     margin-bottom: 24px;
-  }
-
-  .blog-card {
-    flex: 0 0 100%;
-    /* Show 1 card properly */
   }
 
   .blog-content {
@@ -148,12 +145,4 @@
   .img-box img {
     height: max-content;
   }
-
-  /* Carousel track might need adjustment if using Framer Motion? 
-     Framer Motion values in JSX are fixed (-390px). 
-     Ideally we update JSX but CSS override is requested.
-     If JSX has hardcoded animations, CSS might not fix the 'drag to see' logic if it auto-plays.
-     User said "other are drag to see card facilitate".
-     If it's the auto-playing carousel, I might need to stop it or let it be.
-  */
 }

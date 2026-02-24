@@ -195,8 +195,7 @@ textarea {
     font-size: 15px;
     outline: none;
     font-family: inherit;
-    resize: vertical;
-    min-height: 50px;
+    height: 50px;
     transition: border-color 0.3s ease;
     background: transparent;
 }
@@ -240,12 +239,17 @@ textarea {
         padding: 60px 30px;
     }
 
+    .processItem {
+        font-size: 1rem;
+    }
+
     .leftSection {
         margin: 20px;
     }
 
     .heading {
         font-size: 2.2rem;
+        line-height: 1.3;
     }
 
     .subtitle {
@@ -258,11 +262,11 @@ textarea {
     }
 
     .availabilityText {
-        left: 80px;
+        left: 20px;
     }
 
     .svg {
-        left: 40px;
+        left: 65px;
     }
 }
 
@@ -300,8 +304,7 @@ textarea {
     /* 3. Form */
     .formCard {
         order: 3;
-        max-width: 100%;
-        width: 70%;
+        max-width: 520px;
         padding: 28px 22px;
     }
 
@@ -316,6 +319,7 @@ textarea {
 
     .processTitle {
         margin-bottom: 16px;
+        font-size: 1.2rem;
     }
 
     .processList {

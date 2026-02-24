@@ -93,6 +93,28 @@
     white-space: nowrap;
 }
 
+.rightActions {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== Mid-size desktops — tighter padding ===== */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .subContainer {
+        padding: 0 40px;
+    }
+
+    .navbarList li {
+        padding: 0 10px;
+    }
+
+    .navbarButton {
+        margin-left: 20px;
+        padding: 14px 32px;
+    }
+}
+
 /* ===== Hamburger — hidden by default ===== */
 .hamburger {
     display: none;
@@ -112,8 +134,8 @@
 .hamburgerLine {
     display: block;
     width: 28px;
-    height: 3px;
-    background-color: var(--primary-blue);
+    height: 2px;
+    background-color: #333333;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -146,21 +168,21 @@
 .mobileMenu {
     position: fixed;
     top: 0;
-    right: 0;
-    transform: translateX(100%);
-    width: 80%;
-    max-width: 360px;
-    height: 100vh;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
     background: #ffffff;
     z-index: 1060;
     padding: 100px 30px 40px;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-    transition: right 0.35s cubic-bezier(.78, .13, .15, .86);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.35s cubic-bezier(.78, .13, .15, .86);
     overflow-y: auto;
 }
 
 .mobileMenuOpen {
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .mobileNavList {
@@ -223,6 +245,11 @@
         display: none;
     }
 
+    /* Show right-actions group (hamburger + quote) */
+    .rightActions {
+        display: flex;
+    }
+
     /* Show tablet quote button */
     .tabletQuoteButton {
         display: inline-flex;
@@ -243,6 +270,7 @@
         height: 70px;
         max-width: 100%;
         overflow-x: clip;
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .2);
     }
 
     .scrolled {
@@ -266,7 +294,6 @@
         padding-right: 0;
     }
 
-    /* Hide tablet quote button */
     .tabletQuoteButton {
         display: none;
     }

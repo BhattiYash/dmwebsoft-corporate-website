@@ -63,19 +63,20 @@ export default function Navbar() {
                     <button className={styles.navbarButton}>Free Quote</button>
                 </div>
 
-                {/* Free Quote button — visible only 767-992px (tablet) */}
-                <button className={styles.tabletQuoteButton}>Free Quote</button>
-
-                {/* Hamburger icon — visible below 993px */}
-                <button
-                    className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span className={styles.hamburgerLine}></span>
-                    <span className={styles.hamburgerLine}></span>
-                    <span className={styles.hamburgerLine}></span>
-                </button>
+                <div className={styles.rightActions}>
+                    {/* Hamburger icon */}
+                    <button
+                        className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <span className={styles.hamburgerLine}></span>
+                        <span className={styles.hamburgerLine}></span>
+                        <span className={styles.hamburgerLine}></span>
+                    </button>
+                    {/* Free Quote button */}
+                    <button className={styles.tabletQuoteButton}>Free Quote</button>
+                </div>
             </div>
 
             {/* Overlay */}
