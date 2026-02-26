@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 70%;
   text-align: center;
 }
 
@@ -32,17 +32,22 @@
 .ctaButton {
   background-color: var(--secondary-blue);
   color: #ffffff;
-  border: none;
+  border: 1px solid transparent;
   padding: 14px 32px;
   font-size: 1rem;
   font-weight: var(--weight-semibold);
   border-radius: 50px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition-property: background, border, box-shadow, color, opacity, transform;
+  transition-duration: 0.3s;
 }
 
 .ctaButton:hover {
-  background-color: var(--secondary-blue);
+  background-color: #fff;
+  color: var(--secondary-blue);
+  border: 1px solid var(--secondary-blue);
+  transition-property: background, border, box-shadow, color, opacity, transform;
+  transition-duration: 0.3s;
 }
 
 /* ===== TABLET (max-width: 992px) ===== */

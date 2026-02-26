@@ -1,5 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
 import styles from '../assets/styles/testimonials.module.css';
+
 import client1 from '../assets/images/client-review-section/client-review-section-client1.jpeg';
 import client2 from '../assets/images/client-review-section/client-review-section-client2.jpeg';
 import client3 from '../assets/images/client-review-section/client-review-section-client3.jpeg';
@@ -12,6 +16,8 @@ import client9 from '../assets/images/client-review-section/client-review-sectio
 import client10 from '../assets/images/client-review-section/client-review-section-client10.jpeg';
 
 const Testimonials = () => {
+  const swiperRef = useRef(null);
+
   const testimonialsData = [
     { id: 1, text: "DM WebSoft LLP exceeded our expectations! Their seasoned team of experts delivered a website that perfectly captures our brand essence. Their 15+ years of experience truly shine through in their exceptional web development skills.", name: "Mark Thompson", position: "CEO, T******* Enterprises", avatar: client1 },
     { id: 2, text: "Working with DM WebSoft LLP was a game-changer for our business. Their technical prowess and innovative solutions transformed our online presence. A highly recommended web development agency with a stellar track record.", name: "Jennifer Miller", position: "VP of Marketing, M****** Innovations", avatar: client2 },
@@ -25,140 +31,11 @@ const Testimonials = () => {
     { id: 10, text: "Choosing DM WebSoft LLP was the best investment for our web development needs. Their team's proficiency, coupled with a customer-centric approach, made the entire process smooth and enjoyable. A pleasure to work with!", name: "Lauren Carter", position: "VP of Digital Strategy, C****** Solutions", avatar: client10 },
   ];
 
-  const totalReal = testimonialsData.length;
-  const [visibleCount, setVisibleCount] = useState(3);
-  const [currentIndex, setCurrentIndex] = useState(3);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const autoPlayRef = useRef(null);
-  const dragStartX = useRef(0);
-  const dragDelta = useRef(0);
-  const isDragging = useRef(false);
-  const trackRef = useRef(null);
-
-  const getVisibleCount = useCallback(() => {
-    const w = window.innerWidth;
-    if (w > 992) return 3;
-    if (w > 767) return 2;
-    return 1;
-  }, []);
-
-  // Build extended array: [last N clones] + [real] + [first N clones]
-  const cloneCount = visibleCount;
-  const extendedData = [
-    ...testimonialsData.slice(-cloneCount),
-    ...testimonialsData,
-    ...testimonialsData.slice(0, cloneCount),
-  ];
-
-  useEffect(() => {
-    const handleResize = () => {
-      const newCount = getVisibleCount();
-      setVisibleCount(newCount);
-      setIsTransitioning(false);
-      setCurrentIndex(newCount);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [getVisibleCount]);
-
-  // After transition ends, snap from clone to real card
-  const handleTransitionEnd = useCallback(() => {
-    if (currentIndex >= totalReal + cloneCount) {
-      setIsTransitioning(false);
-      setCurrentIndex(cloneCount);
-    }
-    if (currentIndex < cloneCount) {
-      setIsTransitioning(false);
-      setCurrentIndex(totalReal + cloneCount - 1);
-    }
-  }, [currentIndex, totalReal, cloneCount]);
-
-  // Re-enable transition after snap
-  useEffect(() => {
-    if (!isTransitioning) {
-      const raf = requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsTransitioning(true);
-        });
-      });
-      return () => cancelAnimationFrame(raf);
-    }
-  }, [isTransitioning, currentIndex]);
-
-  // Auto-play
-  const stopAutoPlay = useCallback(() => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      autoPlayRef.current = null;
-    }
-  }, []);
-
-  const startAutoPlay = useCallback(() => {
-    stopAutoPlay();
-    autoPlayRef.current = setInterval(() => {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => prev + 1);
-    }, 4000);
-  }, [stopAutoPlay]);
-
-  const resetAutoPlay = useCallback(() => {
-    stopAutoPlay();
-    startAutoPlay();
-  }, [stopAutoPlay, startAutoPlay]);
-
-  useEffect(() => {
-    startAutoPlay();
-    return stopAutoPlay;
-  }, [startAutoPlay, stopAutoPlay]);
-
-  // --- Drag / Touch ---
-  const handleDragStart = (clientX) => {
-    isDragging.current = true;
-    dragStartX.current = clientX;
-    dragDelta.current = 0;
-    stopAutoPlay();
-    setIsTransitioning(false);
-  };
-
-  const handleDragMove = (clientX) => {
-    if (!isDragging.current) return;
-    dragDelta.current = clientX - dragStartX.current;
-    if (trackRef.current) {
-      const cardWidthPercent = 100 / visibleCount;
-      const baseOffset = -(currentIndex * cardWidthPercent);
-      trackRef.current.style.transform = `translateX(calc(${baseOffset}% + ${dragDelta.current}px))`;
+  const handleNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
     }
   };
-
-  const handleDragEnd = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    const threshold = 50;
-    setIsTransitioning(true);
-
-    if (dragDelta.current < -threshold) {
-      setCurrentIndex((prev) => prev + 1);
-    } else if (dragDelta.current > threshold) {
-      setCurrentIndex((prev) => prev - 1);
-    }
-    if (trackRef.current) {
-      trackRef.current.style.transform = '';
-    }
-    dragDelta.current = 0;
-    resetAutoPlay();
-  };
-
-  const onMouseDown = (e) => { e.preventDefault(); handleDragStart(e.clientX); };
-  const onMouseMove = (e) => { handleDragMove(e.clientX); };
-  const onMouseUp = () => { handleDragEnd(); };
-  const onMouseLeave = () => { if (isDragging.current) handleDragEnd(); };
-  const onTouchStart = (e) => { handleDragStart(e.touches[0].clientX); };
-  const onTouchMove = (e) => { handleDragMove(e.touches[0].clientX); };
-  const onTouchEnd = () => { handleDragEnd(); };
-
-  const cardWidthPercent = 100 / visibleCount;
-  const translateX = -(currentIndex * cardWidthPercent);
 
   return (
     <div className={styles["testimonials-section"]}>
@@ -168,31 +45,28 @@ const Testimonials = () => {
         </h1>
 
         <div className={styles["testimonials-wrapper"]}>
-          <div
+          <Swiper
+            ref={swiperRef}
+            modules={[Autoplay, Navigation]}
+            spaceBetween={25}
+            slidesPerView={1}
+            loop={true}
+            speed={600}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              600: { slidesPerView: 2 },
+              992: { slidesPerView: 3 },
+              1200: { slidesPerView: 4 },
+              1400: { slidesPerView: 4.5 }
+            }}
             className={styles["testimonials-viewport"]}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseLeave}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
           >
-            <div
-              ref={trackRef}
-              className={styles["testimonials-track"]}
-              style={{
-                transform: `translateX(${translateX}%)`,
-                transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-              }}
-              onTransitionEnd={handleTransitionEnd}
-            >
-              {extendedData.map((testimonial, index) => (
-                <div
-                  key={`test-${index}`}
-                  className={styles["testimonial-card"]}
-                  style={{ flex: `0 0 calc(${cardWidthPercent}% - 17px)` }}
-                >
+            {testimonialsData.map((testimonial) => (
+              <SwiperSlide key={testimonial.id} className={styles["swiper-slide-custom"]}>
+                <div className={styles["testimonial-card"]}>
                   <p className={styles["testimonial-text"]}>{testimonial.text}</p>
                   <div className={styles["testimonial-author"]}>
                     <img src={testimonial.avatar} alt={testimonial.name} className={styles["author-avatar"]} draggable="false" />
@@ -202,14 +76,14 @@ const Testimonials = () => {
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
           {/* Right arrow only */}
           <button
             className={`${styles["scroll-button"]} ${styles["scroll-right"]}`}
-            onClick={() => { setIsTransitioning(true); setCurrentIndex((prev) => prev + 1); resetAutoPlay(); }}
+            onClick={handleNext}
           >
             <i className="fa-solid fa-arrow-right-long"></i>
           </button>

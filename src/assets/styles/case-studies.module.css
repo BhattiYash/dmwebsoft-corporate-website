@@ -99,6 +99,22 @@ h2 {
   z-index: 1;
 }
 
+/* ===== SMALL DESKTOP (min-width: 993px) and (max-width: 1200px) ===== */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .section {
+    padding: 80px 50px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+  }
+
+  .card {
+    height: auto;
+  }
+}
+
 /* ===== TABLET (max-width: 992px) ===== */
 @media (max-width: 992px) {
   .section {
@@ -116,7 +132,7 @@ h2 {
   }
 
   .header {
-    margin: 0 35px;
+    /* margin: 0 35px; */
   }
 
   .header p {

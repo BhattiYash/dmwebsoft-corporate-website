@@ -32,7 +32,7 @@
     font-weight: var(--weight-semibold);
     margin-bottom: 20px;
     margin-top: revert;
-    line-height: 0.5;
+    line-height: 1.3;
     color: white;
 }
 
@@ -127,6 +127,7 @@
     max-width: 460px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
+    margin: 30px;
 }
 
 .formGroup {
@@ -205,7 +206,7 @@ textarea {
     padding: 16px;
     background-color: var(--secondary-blue);
     color: white;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 50px;
     font-size: 16px;
     font-weight: var(--weight-semibold);
@@ -213,10 +214,16 @@ textarea {
     transition: background-color 0.3s ease;
     margin-bottom: 16px;
     margin-top: 30px;
+    transition-property: background, border, box-shadow, color, opacity, transform;
+    transition-duration: 0.3s;
 }
 
 .submitButton:hover {
-    background-color: var(--secondary-blue);
+    background-color: #fff;
+    color: var(--secondary-blue);
+    border: 1px solid var(--secondary-blue);
+    transition-property: background, border, box-shadow, color, opacity, transform;
+    transition-duration: 0.3s;
 }
 
 .disclaimer {

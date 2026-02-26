@@ -20,24 +20,13 @@
 
 .carousel-viewport {
   width: 100%;
-  overflow: hidden;
-  cursor: grab;
-  position: relative;
   padding: 10px;
 }
 
-.carousel-viewport:active {
-  cursor: grabbing;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 25px;
-  width: 100%;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
+.swiper-slide-custom {
+  display: flex !important;
+  height: auto !important;
+  /* Forces all slides to stretch to match the tallest slide */
 }
 
 .blog-card {
@@ -47,9 +36,13 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  flex-shrink: 0;
-  user-select: none;
-  -webkit-user-select: none;
+  height: 100%;
+}
+
+.blog-card:hover {
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  transition: all ease 0.5s;
 }
 
 .img-box img {
@@ -62,6 +55,10 @@
 
 .blog-content {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* Pushes content down so the box stretches */
 }
 
 .blog-date {
@@ -77,6 +74,8 @@
   margin-bottom: 20px;
   min-height: 65px;
   font-weight: var(--weight-medium);
+  flex-grow: 1;
+  /* Pushes 'Read More' to the very bottom */
 }
 
 .read-more-container {

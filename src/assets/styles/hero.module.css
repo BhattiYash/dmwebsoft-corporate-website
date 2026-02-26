@@ -10,22 +10,25 @@ body {
 
 .container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     position: relative;
     top: 80px;
     width: 100%;
     height: 790px;
-    padding: 0 100px;
+    padding: 0 40px;
+    /* Reduced from 100px so it fits better on 1024px screens */
 }
 
 .contentHero {
     position: relative;
-    top: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    max-width: 1000px;
+    /* Matches the original visual centering */
+    width: 100%;
 }
 
 .contentHero h1 {
@@ -55,13 +58,31 @@ body {
     background-color: #061937;
     color: #ffffff;
     font-weight: var(--weight-medium);
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
     border-radius: 32px;
-    padding: 15px 30px;
-    border: none;
+    padding: 16px 31px;
+    border: 1px solid transparent;
     cursor: pointer;
-    width: 240px;
+    transition-property: background, border, box-shadow, color, opacity, transform;
+    transition-duration: 0.3s;
+    /* width: 240px; */
+}
+
+.button:first-child:hover {
+    background-color: #fff;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    transition-property: background, border, box-shadow, color, opacity, transform;
+    transition-duration: 0.3s;
+}
+
+.button:last-child:hover {
+    background-color: #fff;
+    color: var(--secondary-blue);
+    border: 1px solid var(--secondary-blue);
+    transition-property: background, border, box-shadow, color, opacity, transform;
+    transition-duration: 0.3s;
 }
 
 .ratedPlus {
@@ -77,7 +98,7 @@ body {
     margin: 0;
     position: relative;
     bottom: 15px;
-    right: -20px;
+    right: -12pc;
 }
 
 .spanText {
@@ -106,7 +127,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-left: 200px;
+    align-self: flex-start;
+    margin-left: 280px;
+    /* Roughly position under the right button */
     margin-top: 0px;
 }
 
@@ -114,7 +137,7 @@ body {
     width: 100px;
     height: auto;
     position: relative;
-    right: 40px;
+    right: 0;
 }
 
 /* ===== TABLET (max-width: 992px) ===== */
@@ -162,17 +185,23 @@ body {
     }
 
     .extraElement {
-        margin-left: 200px;
+        margin-left: 280px;
+        align-items: center;
+        align-self: center;
+        /* Center under the centered buttons */
     }
 
     .extraElement img {
         width: 100px;
-        left: 10px;
+        height: auto;
+        position: relative;
+        left: 30px;
     }
 
     .supportText {
         font-size: 1.3rem;
-        left: 80px;
+        left: 30px;
+        text-align: center;
     }
 }
 
@@ -222,7 +251,7 @@ body {
         margin: 50px 0;
         display: flex;
         align-items: center;
-        gap: 30px;
+        gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
